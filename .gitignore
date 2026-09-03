@@ -11,6 +11,8 @@
 .gradle/
 build/
 out/
+!gradle/wrapper/gradle-wrapper.jar
+HELP.md
 
 # IDE
 .idea/
@@ -21,6 +23,9 @@ out/
 .settings/
 .classpath
 .project
+.apt_generated
+.factorypath
+bin/
 
 # OS
 .DS_Store

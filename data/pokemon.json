@@ -1,0 +1,2266 @@
+[ {
+  "id" : 1,
+  "nameKo" : "이상해씨",
+  "genusKo" : "씨앗포켓몬",
+  "types" : [ "grass", "poison" ],
+  "stats" : {
+    "hp" : 45,
+    "attack" : 49,
+    "defense" : 49,
+    "specialAttack" : 65,
+    "specialDefense" : 65,
+    "speed" : 45
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+  "flavorTextKo" : "태어났을 때부터 등에 이상한 씨앗이 심어져 있으며 몸과 함께 자란다고 한다."
+}, {
+  "id" : 2,
+  "nameKo" : "이상해풀",
+  "genusKo" : "씨앗포켓몬",
+  "types" : [ "grass", "poison" ],
+  "stats" : {
+    "hp" : 60,
+    "attack" : 62,
+    "defense" : 63,
+    "specialAttack" : 80,
+    "specialDefense" : 80,
+    "speed" : 60
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
+  "flavorTextKo" : "꽃봉오리가 등에 붙어 있으며 양분을 흡수해가면 커다란 꽃이 핀다고 한다."
+}, {
+  "id" : 3,
+  "nameKo" : "이상해꽃",
+  "genusKo" : "씨앗포켓몬",
+  "types" : [ "grass", "poison" ],
+  "stats" : {
+    "hp" : 80,
+    "attack" : 82,
+    "defense" : 83,
+    "specialAttack" : 100,
+    "specialDefense" : 100,
+    "speed" : 80
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
+  "flavorTextKo" : "큰 꽃잎을 펼쳐 햇빛을 받고 있으면 몸에 힘이 넘쳐흐른다."
+}, {
+  "id" : 4,
+  "nameKo" : "파이리",
+  "genusKo" : "도롱뇽포켓몬",
+  "types" : [ "fire" ],
+  "stats" : {
+    "hp" : 39,
+    "attack" : 52,
+    "defense" : 43,
+    "specialAttack" : 60,
+    "specialDefense" : 50,
+    "speed" : 65
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+  "flavorTextKo" : "꼬리의 불꽃은 파이리의 생명력의 상징이다. 건강할 때 왕성하게 불타오른다."
+}, {
+  "id" : 5,
+  "nameKo" : "리자드",
+  "genusKo" : "화염포켓몬",
+  "types" : [ "fire" ],
+  "stats" : {
+    "hp" : 58,
+    "attack" : 64,
+    "defense" : 58,
+    "specialAttack" : 80,
+    "specialDefense" : 65,
+    "speed" : 80
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png",
+  "flavorTextKo" : "꼬리를 휘둘러 상대를 쓰러트리고 날카로운 발톱으로 갈기갈기 찢어버린다."
+}, {
+  "id" : 6,
+  "nameKo" : "리자몽",
+  "genusKo" : "화염포켓몬",
+  "types" : [ "fire", "flying" ],
+  "stats" : {
+    "hp" : 78,
+    "attack" : 84,
+    "defense" : 78,
+    "specialAttack" : 109,
+    "specialDefense" : 85,
+    "speed" : 100
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+  "flavorTextKo" : "입에서 작렬하는 불꽃을 토해낼 때 꼬리의 끝이 더욱 붉고 격렬하게 타오른다."
+}, {
+  "id" : 7,
+  "nameKo" : "꼬부기",
+  "genusKo" : "꼬마거북포켓몬",
+  "types" : [ "water" ],
+  "stats" : {
+    "hp" : 44,
+    "attack" : 48,
+    "defense" : 65,
+    "specialAttack" : 50,
+    "specialDefense" : 64,
+    "speed" : 43
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+  "flavorTextKo" : "등껍질에 숨어 몸을 보호한다. 상대의 빈틈을 놓치지 않고 물을 뿜어내어 반격한다."
+}, {
+  "id" : 8,
+  "nameKo" : "어니부기",
+  "genusKo" : "거북포켓몬",
+  "types" : [ "water" ],
+  "stats" : {
+    "hp" : 59,
+    "attack" : 63,
+    "defense" : 80,
+    "specialAttack" : 65,
+    "specialDefense" : 80,
+    "speed" : 58
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png",
+  "flavorTextKo" : "딱 하고 머리를 맞을 때 등껍질로 숨어서 피한다. 하지만 꼬리가 살짝 삐져나와 있다."
+}, {
+  "id" : 9,
+  "nameKo" : "거북왕",
+  "genusKo" : "껍질포켓몬",
+  "types" : [ "water" ],
+  "stats" : {
+    "hp" : 79,
+    "attack" : 83,
+    "defense" : 100,
+    "specialAttack" : 85,
+    "specialDefense" : 105,
+    "speed" : 78
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",
+  "flavorTextKo" : "무거운 몸으로 상대를 덮쳐서 기절시킨다. 위기에 처하면 등껍질에 숨는다."
+}, {
+  "id" : 10,
+  "nameKo" : "캐터피",
+  "genusKo" : "애벌레포켓몬",
+  "types" : [ "bug" ],
+  "stats" : {
+    "hp" : 45,
+    "attack" : 30,
+    "defense" : 35,
+    "specialAttack" : 20,
+    "specialDefense" : 20,
+    "speed" : 45
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10.png",
+  "flavorTextKo" : "머리의 더듬이로부터 강렬한 냄새를 내어 적을 물리치고 몸을 보호한다."
+}, {
+  "id" : 11,
+  "nameKo" : "단데기",
+  "genusKo" : "번데기포켓몬",
+  "types" : [ "bug" ],
+  "stats" : {
+    "hp" : 50,
+    "attack" : 20,
+    "defense" : 55,
+    "specialAttack" : 25,
+    "specialDefense" : 25,
+    "speed" : 30
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/11.png",
+  "flavorTextKo" : "강철같이 단단한 껍질로 부드러운 몸을 보호하고 있다. 진화할 때까지 가만히 참고 있다."
+}, {
+  "id" : 12,
+  "nameKo" : "버터플",
+  "genusKo" : "나비포켓몬",
+  "types" : [ "bug", "flying" ],
+  "stats" : {
+    "hp" : 60,
+    "attack" : 45,
+    "defense" : 50,
+    "specialAttack" : 90,
+    "specialDefense" : 80,
+    "speed" : 70
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/12.png",
+  "flavorTextKo" : "꽃의 꿀을 매우 좋아한다. 약간의 꽃가루만으로 꽃밭이 있는 장소를 찾아낼 수 있다."
+}, {
+  "id" : 13,
+  "nameKo" : "뿔충이",
+  "genusKo" : "송충이포켓몬",
+  "types" : [ "bug", "poison" ],
+  "stats" : {
+    "hp" : 40,
+    "attack" : 35,
+    "defense" : 30,
+    "specialAttack" : 20,
+    "specialDefense" : 20,
+    "speed" : 50
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/13.png",
+  "flavorTextKo" : "숲이나 풀밭에 많이 서식한다. 머리끝에 5cm 정도의 작고 날카로운 독침을 지니고 있다."
+}, {
+  "id" : 14,
+  "nameKo" : "딱충이",
+  "genusKo" : "번데기포켓몬",
+  "types" : [ "bug", "poison" ],
+  "stats" : {
+    "hp" : 45,
+    "attack" : 25,
+    "defense" : 50,
+    "specialAttack" : 25,
+    "specialDefense" : 25,
+    "speed" : 35
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/14.png",
+  "flavorTextKo" : "스스로는 거의 움직일 수 없지만 위험할 때는 단단해져서 몸을 보호하고 있는 것 같다."
+}, {
+  "id" : 15,
+  "nameKo" : "독침붕",
+  "genusKo" : "독벌포켓몬",
+  "types" : [ "bug", "poison" ],
+  "stats" : {
+    "hp" : 65,
+    "attack" : 90,
+    "defense" : 40,
+    "specialAttack" : 45,
+    "specialDefense" : 80,
+    "speed" : 75
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/15.png",
+  "flavorTextKo" : "양손과 엉덩이에 있는 3개의 독침으로 상대를 찌르고 찌르고 또 찌르며 공격한다."
+}, {
+  "id" : 16,
+  "nameKo" : "구구",
+  "genusKo" : "아기새포켓몬",
+  "types" : [ "normal", "flying" ],
+  "stats" : {
+    "hp" : 40,
+    "attack" : 45,
+    "defense" : 40,
+    "specialAttack" : 35,
+    "specialDefense" : 35,
+    "speed" : 56
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/16.png",
+  "flavorTextKo" : "숲이나 수풀에 많이 분포해 있다. 땅에서도 격렬한 날갯짓으로 모래를 뿌리기도 한다."
+}, {
+  "id" : 17,
+  "nameKo" : "피죤",
+  "genusKo" : "새포켓몬",
+  "types" : [ "normal", "flying" ],
+  "stats" : {
+    "hp" : 63,
+    "attack" : 60,
+    "defense" : 55,
+    "specialAttack" : 50,
+    "specialDefense" : 50,
+    "speed" : 71
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/17.png",
+  "flavorTextKo" : "발톱이 발달해 있다. 먹이인 아라리를 잡아 100km 떨어져 있는 둥지까지 나른다."
+}, {
+  "id" : 18,
+  "nameKo" : "피죤투",
+  "genusKo" : "새포켓몬",
+  "types" : [ "normal", "flying" ],
+  "stats" : {
+    "hp" : 83,
+    "attack" : 80,
+    "defense" : 75,
+    "specialAttack" : 70,
+    "specialDefense" : 70,
+    "speed" : 101
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/18.png",
+  "flavorTextKo" : "먹이를 찾을 때 수면을 아슬아슬하게 미끄러지듯 날아 잉어킹 등을 움켜잡는다."
+}, {
+  "id" : 19,
+  "nameKo" : "꼬렛",
+  "genusKo" : "쥐포켓몬",
+  "types" : [ "normal" ],
+  "stats" : {
+    "hp" : 30,
+    "attack" : 56,
+    "defense" : 35,
+    "specialAttack" : 25,
+    "specialDefense" : 35,
+    "speed" : 72
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/19.png",
+  "flavorTextKo" : "먹을 것이 있는 곳이라면 어디서든 서식한다. 온종일 먹이를 찾아다닌다."
+}, {
+  "id" : 20,
+  "nameKo" : "레트라",
+  "genusKo" : "쥐포켓몬",
+  "types" : [ "normal" ],
+  "stats" : {
+    "hp" : 55,
+    "attack" : 81,
+    "defense" : 60,
+    "specialAttack" : 50,
+    "specialDefense" : 70,
+    "speed" : 97
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/20.png",
+  "flavorTextKo" : "계속 자라는 앞니를 갈아내려고 딱딱한 것을 갉는 습성이 있다. 벽돌로 된 벽도 갉아서 부순다."
+}, {
+  "id" : 21,
+  "nameKo" : "깨비참",
+  "genusKo" : "아기새포켓몬",
+  "types" : [ "normal", "flying" ],
+  "stats" : {
+    "hp" : 40,
+    "attack" : 60,
+    "defense" : 30,
+    "specialAttack" : 31,
+    "specialDefense" : 31,
+    "speed" : 70
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/21.png",
+  "flavorTextKo" : "자신의 영역을 지키기 위해 작은 날개를 쳐서 바쁘게 주위를 날아 맴돈다."
+}, {
+  "id" : 22,
+  "nameKo" : "깨비드릴조",
+  "genusKo" : "부리포켓몬",
+  "types" : [ "normal", "flying" ],
+  "stats" : {
+    "hp" : 65,
+    "attack" : 90,
+    "defense" : 65,
+    "specialAttack" : 61,
+    "specialDefense" : 61,
+    "speed" : 100
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/22.png",
+  "flavorTextKo" : "커다란 날개로 넓은 하늘을 계속 날 수 있다. 한 번도 내려앉지 않아도 괜찮다."
+}, {
+  "id" : 23,
+  "nameKo" : "아보",
+  "genusKo" : "뱀포켓몬",
+  "types" : [ "poison" ],
+  "stats" : {
+    "hp" : 35,
+    "attack" : 60,
+    "defense" : 44,
+    "specialAttack" : 40,
+    "specialDefense" : 54,
+    "speed" : 55
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/23.png",
+  "flavorTextKo" : "성장할수록 점점 길어진다. 밤에는 나뭇가지에 몸을 돌돌 말고 쉰다."
+}, {
+  "id" : 24,
+  "nameKo" : "아보크",
+  "genusKo" : "코브라포켓몬",
+  "types" : [ "poison" ],
+  "stats" : {
+    "hp" : 60,
+    "attack" : 95,
+    "defense" : 69,
+    "specialAttack" : 65,
+    "specialDefense" : 79,
+    "speed" : 80
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/24.png",
+  "flavorTextKo" : "배의 무늬가 무서운 얼굴로 보인다. 약한 적은 그 무늬만 보고도 도망치고 만다."
+}, {
+  "id" : 25,
+  "nameKo" : "피카츄",
+  "genusKo" : "쥐포켓몬",
+  "types" : [ "electric" ],
+  "stats" : {
+    "hp" : 35,
+    "attack" : 55,
+    "defense" : 40,
+    "specialAttack" : 50,
+    "specialDefense" : 50,
+    "speed" : 90
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+  "flavorTextKo" : "꼬리를 세우고 주변의 상황을 살피다 보면 가끔 꼬리에 번개가 친다."
+}, {
+  "id" : 26,
+  "nameKo" : "라이츄",
+  "genusKo" : "쥐포켓몬",
+  "types" : [ "electric" ],
+  "stats" : {
+    "hp" : 60,
+    "attack" : 90,
+    "defense" : 55,
+    "specialAttack" : 90,
+    "specialDefense" : 80,
+    "speed" : 110
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/26.png",
+  "flavorTextKo" : "전기가 모이면 근육이 자극되어 여느 때보다 공격적이 된다."
+}, {
+  "id" : 27,
+  "nameKo" : "모래두지",
+  "genusKo" : "쥐포켓몬",
+  "types" : [ "ground" ],
+  "stats" : {
+    "hp" : 50,
+    "attack" : 75,
+    "defense" : 85,
+    "specialAttack" : 20,
+    "specialDefense" : 30,
+    "speed" : 40
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/27.png",
+  "flavorTextKo" : "지면에 구멍을 파고 산다. 자신에게 위험이 닥쳐오면 둥글게 말아서 몸을 보호한다."
+}, {
+  "id" : 28,
+  "nameKo" : "고지",
+  "genusKo" : "쥐포켓몬",
+  "types" : [ "ground" ],
+  "stats" : {
+    "hp" : 75,
+    "attack" : 100,
+    "defense" : 110,
+    "specialAttack" : 45,
+    "specialDefense" : 55,
+    "speed" : 65
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/28.png",
+  "flavorTextKo" : "굉장한 기세로 지면을 파면 가시와 발톱이 부러져 버리지만 다음 날에는 바로 돋아나 있다."
+}, {
+  "id" : 29,
+  "nameKo" : "니드런♀",
+  "genusKo" : "독침포켓몬",
+  "types" : [ "poison" ],
+  "stats" : {
+    "hp" : 55,
+    "attack" : 47,
+    "defense" : 52,
+    "specialAttack" : 40,
+    "specialDefense" : 40,
+    "speed" : 41
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/29.png",
+  "flavorTextKo" : "몸은 작지만 독침을 지니고 있기 때문에 주의가 필요하다. 암컷의 뿔이 더 작다."
+}, {
+  "id" : 30,
+  "nameKo" : "니드리나",
+  "genusKo" : "독침포켓몬",
+  "types" : [ "poison" ],
+  "stats" : {
+    "hp" : 70,
+    "attack" : 62,
+    "defense" : 67,
+    "specialAttack" : 55,
+    "specialDefense" : 55,
+    "speed" : 56
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/30.png",
+  "flavorTextKo" : "암컷으로 성격은 온화하다. 입에서 내보내는 초음파는 상대를 혼란시키는 힘이 있다."
+}, {
+  "id" : 31,
+  "nameKo" : "니드퀸",
+  "genusKo" : "드릴포켓몬",
+  "types" : [ "poison", "ground" ],
+  "stats" : {
+    "hp" : 90,
+    "attack" : 92,
+    "defense" : 87,
+    "specialAttack" : 75,
+    "specialDefense" : 85,
+    "speed" : 76
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/31.png",
+  "flavorTextKo" : "비늘로 뒤덮인 튼튼한 몸으로 둥지의 입구를 막아 상대로부터 새끼들을 지킨다."
+}, {
+  "id" : 32,
+  "nameKo" : "니드런♂",
+  "genusKo" : "독침포켓몬",
+  "types" : [ "poison" ],
+  "stats" : {
+    "hp" : 46,
+    "attack" : 57,
+    "defense" : 40,
+    "specialAttack" : 40,
+    "specialDefense" : 40,
+    "speed" : 50
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/32.png",
+  "flavorTextKo" : "풀밭 위로 귀만 내어 주위의 낌새를 살핀다. 맹독의 뿔로 몸을 보호한다."
+}, {
+  "id" : 33,
+  "nameKo" : "니드리노",
+  "genusKo" : "독침포켓몬",
+  "types" : [ "poison" ],
+  "stats" : {
+    "hp" : 61,
+    "attack" : 72,
+    "defense" : 57,
+    "specialAttack" : 55,
+    "specialDefense" : 55,
+    "speed" : 65
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/33.png",
+  "flavorTextKo" : "발달한 귀를 세워 주위의 낌새를 살핀다. 무슨 일이 생기면 바로 덤벼든다."
+}, {
+  "id" : 34,
+  "nameKo" : "니드킹",
+  "genusKo" : "드릴포켓몬",
+  "types" : [ "poison", "ground" ],
+  "stats" : {
+    "hp" : 81,
+    "attack" : 102,
+    "defense" : 77,
+    "specialAttack" : 85,
+    "specialDefense" : 75,
+    "speed" : 85
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/34.png",
+  "flavorTextKo" : "돌처럼 딱딱한 피부와 길게 뻗은 뿔이 특징이다. 뿔에는 독이 있으니 주의해야 한다."
+}, {
+  "id" : 35,
+  "nameKo" : "삐삐",
+  "genusKo" : "요정포켓몬",
+  "types" : [ "fairy" ],
+  "stats" : {
+    "hp" : 70,
+    "attack" : 45,
+    "defense" : 48,
+    "specialAttack" : 60,
+    "specialDefense" : 65,
+    "speed" : 35
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/35.png",
+  "flavorTextKo" : "보름달 밤에 삐삐가 모여 춤을 추는 모습을 보면 행복해진다고 전해진다."
+}, {
+  "id" : 36,
+  "nameKo" : "픽시",
+  "genusKo" : "요정포켓몬",
+  "types" : [ "fairy" ],
+  "stats" : {
+    "hp" : 95,
+    "attack" : 70,
+    "defense" : 73,
+    "specialAttack" : 95,
+    "specialDefense" : 90,
+    "speed" : 60
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/36.png",
+  "flavorTextKo" : "1km 전방에 떨어진 바늘 소리도 분간할 수 있는 우수한 귀를 가지고 있다. 조용한 산속에 살고 있다."
+}, {
+  "id" : 37,
+  "nameKo" : "식스테일",
+  "genusKo" : "여우포켓몬",
+  "types" : [ "fire" ],
+  "stats" : {
+    "hp" : 38,
+    "attack" : 41,
+    "defense" : 40,
+    "specialAttack" : 50,
+    "specialDefense" : 65,
+    "speed" : 65
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/37.png",
+  "flavorTextKo" : "태어났을 때는 꼬리가 새하얗고 하나밖에 없다. 성장하면 끝이 갈라지며 꼬리 수가 늘어난다."
+}, {
+  "id" : 38,
+  "nameKo" : "나인테일",
+  "genusKo" : "여우포켓몬",
+  "types" : [ "fire" ],
+  "stats" : {
+    "hp" : 73,
+    "attack" : 76,
+    "defense" : 75,
+    "specialAttack" : 81,
+    "specialDefense" : 100,
+    "speed" : 100
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/38.png",
+  "flavorTextKo" : "황금빛으로 빛나는 털과 9개의 긴 꼬리를 지녔다. 1000년을 산다고 한다."
+}, {
+  "id" : 39,
+  "nameKo" : "푸린",
+  "genusKo" : "풍선포켓몬",
+  "types" : [ "normal", "fairy" ],
+  "stats" : {
+    "hp" : 115,
+    "attack" : 45,
+    "defense" : 20,
+    "specialAttack" : 45,
+    "specialDefense" : 25,
+    "speed" : 20
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/39.png",
+  "flavorTextKo" : "동그랗고 커다란 눈동자로 유인하고 기분 좋은 노래를 불러 상대방을 잠들게 한다."
+}, {
+  "id" : 40,
+  "nameKo" : "푸크린",
+  "genusKo" : "풍선포켓몬",
+  "types" : [ "normal", "fairy" ],
+  "stats" : {
+    "hp" : 140,
+    "attack" : 70,
+    "defense" : 45,
+    "specialAttack" : 85,
+    "specialDefense" : 50,
+    "speed" : 45
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/40.png",
+  "flavorTextKo" : "2마리가 바싹 붙어 있으면 서로의 털이 너무 기분 좋아서 떨어지지 않게 되어버린다."
+}, {
+  "id" : 41,
+  "nameKo" : "주뱃",
+  "genusKo" : "박쥐포켓몬",
+  "types" : [ "poison", "flying" ],
+  "stats" : {
+    "hp" : 40,
+    "attack" : 45,
+    "defense" : 35,
+    "specialAttack" : 30,
+    "specialDefense" : 40,
+    "speed" : 55
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/41.png",
+  "flavorTextKo" : "입에서 내는 초음파로 두 눈이 없어도 주위의 장애물을 탐색할 수 있다."
+}, {
+  "id" : 42,
+  "nameKo" : "골뱃",
+  "genusKo" : "박쥐포켓몬",
+  "types" : [ "poison", "flying" ],
+  "stats" : {
+    "hp" : 75,
+    "attack" : 80,
+    "defense" : 70,
+    "specialAttack" : 65,
+    "specialDefense" : 75,
+    "speed" : 90
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/42.png",
+  "flavorTextKo" : "물리면 끝이다. 죽을 정도로 피를 빨아들이기 때문에 무거워져서 날 수 없게 될 때도 있다."
+}, {
+  "id" : 43,
+  "nameKo" : "뚜벅쵸",
+  "genusKo" : "잡초포켓몬",
+  "types" : [ "grass", "poison" ],
+  "stats" : {
+    "hp" : 45,
+    "attack" : 50,
+    "defense" : 55,
+    "specialAttack" : 75,
+    "specialDefense" : 65,
+    "speed" : 30
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/43.png",
+  "flavorTextKo" : "낮에는 태양을 피하려고 차가운 땅속에 들어가 있다. 달빛을 쬐어 성장한다."
+}, {
+  "id" : 44,
+  "nameKo" : "냄새꼬",
+  "genusKo" : "잡초포켓몬",
+  "types" : [ "grass", "poison" ],
+  "stats" : {
+    "hp" : 60,
+    "attack" : 65,
+    "defense" : 70,
+    "specialAttack" : 85,
+    "specialDefense" : 75,
+    "speed" : 40
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/44.png",
+  "flavorTextKo" : "강렬한 악취가 난다! 그럼에도 불구하고 1000명에 한 명 정도 이 냄새를 즐겨 맡는 사람이 있다."
+}, {
+  "id" : 45,
+  "nameKo" : "라플레시아",
+  "genusKo" : "꽃포켓몬",
+  "types" : [ "grass", "poison" ],
+  "stats" : {
+    "hp" : 75,
+    "attack" : 80,
+    "defense" : 85,
+    "specialAttack" : 110,
+    "specialDefense" : 90,
+    "speed" : 50
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/45.png",
+  "flavorTextKo" : "꽃잎이 클수록 많은 꽃가루를 만들어 내지만 머리가 무거워서 지쳐버린다고 한다."
+}, {
+  "id" : 46,
+  "nameKo" : "파라스",
+  "genusKo" : "버섯포켓몬",
+  "types" : [ "bug", "grass" ],
+  "stats" : {
+    "hp" : 35,
+    "attack" : 70,
+    "defense" : 55,
+    "specialAttack" : 45,
+    "specialDefense" : 55,
+    "speed" : 25
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/46.png",
+  "flavorTextKo" : "벌레의 등에 돋아나 있는 것은 동충하초라는 버섯이다. 성장하면 버섯도 커진다."
+}, {
+  "id" : 47,
+  "nameKo" : "파라섹트",
+  "genusKo" : "버섯포켓몬",
+  "types" : [ "bug", "grass" ],
+  "stats" : {
+    "hp" : 60,
+    "attack" : 95,
+    "defense" : 80,
+    "specialAttack" : 60,
+    "specialDefense" : 80,
+    "speed" : 30
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/47.png",
+  "flavorTextKo" : "몸보다 큰 버섯이 파라섹트를 조종하고 있다. 독 포자를 여기저기 뿌린다."
+}, {
+  "id" : 48,
+  "nameKo" : "콘팡",
+  "genusKo" : "곤충포켓몬",
+  "types" : [ "bug", "poison" ],
+  "stats" : {
+    "hp" : 60,
+    "attack" : 55,
+    "defense" : 50,
+    "specialAttack" : 40,
+    "specialDefense" : 55,
+    "speed" : 45
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/48.png",
+  "flavorTextKo" : "작은 눈이 많이 모여 큰 눈을 이루고 있다. 밤이 되면 불빛을 향해 모여든다."
+}, {
+  "id" : 49,
+  "nameKo" : "도나리",
+  "genusKo" : "독나방포켓몬",
+  "types" : [ "bug", "poison" ],
+  "stats" : {
+    "hp" : 70,
+    "attack" : 65,
+    "defense" : 60,
+    "specialAttack" : 90,
+    "specialDefense" : 75,
+    "speed" : 90
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/49.png",
+  "flavorTextKo" : "흩뿌려진 날개 가루에 닿으면 몸의 감각이 이상해져서 똑바로 서 있을 수 없게 된다."
+}, {
+  "id" : 50,
+  "nameKo" : "디그다",
+  "genusKo" : "두더지포켓몬",
+  "types" : [ "ground" ],
+  "stats" : {
+    "hp" : 10,
+    "attack" : 55,
+    "defense" : 25,
+    "specialAttack" : 35,
+    "specialDefense" : 45,
+    "speed" : 95
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/50.png",
+  "flavorTextKo" : "지하 1m 정도를 파고들어 가서 나무뿌리 등을 씹어 먹고 산다. 가끔 지상으로 얼굴을 내민다."
+}, {
+  "id" : 51,
+  "nameKo" : "닥트리오",
+  "genusKo" : "두더지포켓몬",
+  "types" : [ "ground" ],
+  "stats" : {
+    "hp" : 35,
+    "attack" : 100,
+    "defense" : 50,
+    "specialAttack" : 50,
+    "specialDefense" : 70,
+    "speed" : 120
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/51.png",
+  "flavorTextKo" : "땅속을 파고들어 가 상대가 방심하고 있을 때 다른 곳에서 공격한다."
+}, {
+  "id" : 52,
+  "nameKo" : "나옹",
+  "genusKo" : "요괴고양이포켓몬",
+  "types" : [ "normal" ],
+  "stats" : {
+    "hp" : 40,
+    "attack" : 45,
+    "defense" : 35,
+    "specialAttack" : 40,
+    "specialDefense" : 40,
+    "speed" : 90
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/52.png",
+  "flavorTextKo" : "한밤중에 움직이는 습성이 있다. 반짝반짝 빛나는 것을 발견하면 그에 못지않게 눈동자가 반짝인다."
+}, {
+  "id" : 53,
+  "nameKo" : "페르시온",
+  "genusKo" : "샴고양이포켓몬",
+  "types" : [ "normal" ],
+  "stats" : {
+    "hp" : 65,
+    "attack" : 70,
+    "defense" : 60,
+    "specialAttack" : 65,
+    "specialDefense" : 65,
+    "speed" : 115
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/53.png",
+  "flavorTextKo" : "털의 결이 아름다워 애완용으로 기르려는 사람이 많지만, 곧잘 할퀴려 들기 때문에 쉽지 않다."
+}, {
+  "id" : 54,
+  "nameKo" : "고라파덕",
+  "genusKo" : "오리포켓몬",
+  "types" : [ "water" ],
+  "stats" : {
+    "hp" : 50,
+    "attack" : 52,
+    "defense" : 48,
+    "specialAttack" : 65,
+    "specialDefense" : 50,
+    "speed" : 55
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/54.png",
+  "flavorTextKo" : "항상 두통에 시달리고 있다. 이 두통이 심해지면 이상한 힘을 쓰기 시작한다."
+}, {
+  "id" : 55,
+  "nameKo" : "골덕",
+  "genusKo" : "오리포켓몬",
+  "types" : [ "water" ],
+  "stats" : {
+    "hp" : 80,
+    "attack" : 82,
+    "defense" : 78,
+    "specialAttack" : 95,
+    "specialDefense" : 80,
+    "speed" : 85
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/55.png",
+  "flavorTextKo" : "해 질 무렵 강가에 모습을 나타낸다. 이마가 이상하게 빛날 때 신통력을 발휘한다고 전해진다."
+}, {
+  "id" : 56,
+  "nameKo" : "망키",
+  "genusKo" : "돈숭이포켓몬",
+  "types" : [ "fighting" ],
+  "stats" : {
+    "hp" : 40,
+    "attack" : 80,
+    "defense" : 35,
+    "specialAttack" : 35,
+    "specialDefense" : 45,
+    "speed" : 70
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/56.png",
+  "flavorTextKo" : "이유 없이 화내고 날뛰기 시작하면 동료도 구별하지 못하기 때문에 가까이 가는 것은 매우 위험하다."
+}, {
+  "id" : 57,
+  "nameKo" : "성원숭",
+  "genusKo" : "돈숭이포켓몬",
+  "types" : [ "fighting" ],
+  "stats" : {
+    "hp" : 65,
+    "attack" : 105,
+    "defense" : 60,
+    "specialAttack" : 60,
+    "specialDefense" : 70,
+    "speed" : 95
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/57.png",
+  "flavorTextKo" : "주위에 아무도 없을 때만은 화를 내지 않고 있다. 그러나 그 모습을 보기가 어렵다."
+}, {
+  "id" : 58,
+  "nameKo" : "가디",
+  "genusKo" : "강아지포켓몬",
+  "types" : [ "fire" ],
+  "stats" : {
+    "hp" : 55,
+    "attack" : 70,
+    "defense" : 45,
+    "specialAttack" : 70,
+    "specialDefense" : 50,
+    "speed" : 60
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/58.png",
+  "flavorTextKo" : "사람을 잘 따르는 충실한 성격이다. 적에게는 짖거나 물며 쫓아내려고 한다."
+}, {
+  "id" : 59,
+  "nameKo" : "윈디",
+  "genusKo" : "전설포켓몬",
+  "types" : [ "fire" ],
+  "stats" : {
+    "hp" : 90,
+    "attack" : 110,
+    "defense" : 80,
+    "specialAttack" : 100,
+    "specialDefense" : 80,
+    "speed" : 95
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/59.png",
+  "flavorTextKo" : "옛날부터 많은 사람의 마음을 사로잡은 아름다운 포켓몬이다. 날듯이 경쾌하게 달린다."
+}, {
+  "id" : 60,
+  "nameKo" : "발챙이",
+  "genusKo" : "올챙이포켓몬",
+  "types" : [ "water" ],
+  "stats" : {
+    "hp" : 40,
+    "attack" : 50,
+    "defense" : 40,
+    "specialAttack" : 40,
+    "specialDefense" : 40,
+    "speed" : 90
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/60.png",
+  "flavorTextKo" : "매끄럽고 검은 피부는 얇고 축축하다. 내장 일부가 비쳐서 소용돌이 모양으로 보인다."
+}, {
+  "id" : 61,
+  "nameKo" : "슈륙챙이",
+  "genusKo" : "올챙이포켓몬",
+  "types" : [ "water" ],
+  "stats" : {
+    "hp" : 65,
+    "attack" : 65,
+    "defense" : 65,
+    "specialAttack" : 50,
+    "specialDefense" : 50,
+    "speed" : 90
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/61.png",
+  "flavorTextKo" : "육지에서도 수중에서도 살 수 있다. 지상에서는 항상 땀을 흘려서 피부를 미끌미끌하게 하고 있다."
+}, {
+  "id" : 62,
+  "nameKo" : "강챙이",
+  "genusKo" : "올챙이포켓몬",
+  "types" : [ "water", "fighting" ],
+  "stats" : {
+    "hp" : 90,
+    "attack" : 95,
+    "defense" : 95,
+    "specialAttack" : 70,
+    "specialDefense" : 90,
+    "speed" : 70
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/62.png",
+  "flavorTextKo" : "강인한 근육을 가지고 있다. 태평양을 쉬지 않고 계속 헤엄칠 수 있다."
+}, {
+  "id" : 63,
+  "nameKo" : "캐이시",
+  "genusKo" : "초능력포켓몬",
+  "types" : [ "psychic" ],
+  "stats" : {
+    "hp" : 25,
+    "attack" : 20,
+    "defense" : 15,
+    "specialAttack" : 105,
+    "specialDefense" : 55,
+    "speed" : 90
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/63.png",
+  "flavorTextKo" : "하루에 18시간은 자고 있다. 자는 동안에도 다양한 초능력을 사용한다."
+}, {
+  "id" : 64,
+  "nameKo" : "윤겔라",
+  "genusKo" : "초능력포켓몬",
+  "types" : [ "psychic" ],
+  "stats" : {
+    "hp" : 40,
+    "attack" : 35,
+    "defense" : 30,
+    "specialAttack" : 120,
+    "specialDefense" : 70,
+    "speed" : 105
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/64.png",
+  "flavorTextKo" : "초능력을 발휘하면 강한 알파파를 내어 정밀 기계를 고장 내 버린다."
+}, {
+  "id" : 65,
+  "nameKo" : "후딘",
+  "genusKo" : "초능력포켓몬",
+  "types" : [ "psychic" ],
+  "stats" : {
+    "hp" : 55,
+    "attack" : 50,
+    "defense" : 45,
+    "specialAttack" : 135,
+    "specialDefense" : 95,
+    "speed" : 120
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/65.png",
+  "flavorTextKo" : "뇌세포는 항상 분열해서 죽을 때까지 늘어나기 때문에 모든 것을 기억해 놓을 수 있다."
+}, {
+  "id" : 66,
+  "nameKo" : "알통몬",
+  "genusKo" : "괴력포켓몬",
+  "types" : [ "fighting" ],
+  "stats" : {
+    "hp" : 70,
+    "attack" : 80,
+    "defense" : 50,
+    "specialAttack" : 35,
+    "specialDefense" : 35,
+    "speed" : 35
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/66.png",
+  "flavorTextKo" : "데구리를 수없이 들었다 놨다 하며 전신의 근육을 단련한다. 모든 격투기를 사용한다."
+}, {
+  "id" : 67,
+  "nameKo" : "근육몬",
+  "genusKo" : "괴력포켓몬",
+  "types" : [ "fighting" ],
+  "stats" : {
+    "hp" : 80,
+    "attack" : 100,
+    "defense" : 70,
+    "specialAttack" : 50,
+    "specialDefense" : 60,
+    "speed" : 45
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/67.png",
+  "flavorTextKo" : "엄청나게 강한 육체를 지녔기 때문에 파워 세이브 벨트를 차서 힘을 제어하고 있다."
+}, {
+  "id" : 68,
+  "nameKo" : "괴력몬",
+  "genusKo" : "괴력포켓몬",
+  "types" : [ "fighting" ],
+  "stats" : {
+    "hp" : 90,
+    "attack" : 130,
+    "defense" : 80,
+    "specialAttack" : 65,
+    "specialDefense" : 85,
+    "speed" : 55
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/68.png",
+  "flavorTextKo" : "발달한 4개의 팔은 2초 동안 1000번의 펀치를 날릴 수 있다."
+}, {
+  "id" : 69,
+  "nameKo" : "모다피",
+  "genusKo" : "꽃포켓몬",
+  "types" : [ "grass", "poison" ],
+  "stats" : {
+    "hp" : 50,
+    "attack" : 75,
+    "defense" : 35,
+    "specialAttack" : 70,
+    "specialDefense" : 30,
+    "speed" : 40
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/69.png",
+  "flavorTextKo" : "홀쭉한 체격이지만 먹이를 잡을 때의 움직임은 눈에 보이지 않을 정도로 빠르다."
+}, {
+  "id" : 70,
+  "nameKo" : "우츠동",
+  "genusKo" : "파리잡이포켓몬",
+  "types" : [ "grass", "poison" ],
+  "stats" : {
+    "hp" : 65,
+    "attack" : 90,
+    "defense" : 50,
+    "specialAttack" : 85,
+    "specialDefense" : 45,
+    "speed" : 55
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/70.png",
+  "flavorTextKo" : "잎사귀 부분은 칼날이 되어 상대를 베어버린다. 입에서는 무엇이든 녹이는 액체를 뿜어낸다."
+}, {
+  "id" : 71,
+  "nameKo" : "우츠보트",
+  "genusKo" : "파리잡이포켓몬",
+  "types" : [ "grass", "poison" ],
+  "stats" : {
+    "hp" : 80,
+    "attack" : 105,
+    "defense" : 65,
+    "specialAttack" : 100,
+    "specialDefense" : 70,
+    "speed" : 70
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/71.png",
+  "flavorTextKo" : "정글의 안쪽에 우츠보트만 있는 지대가 있어서 한 번 가면 두 번 다시 돌아올 수 없다."
+}, {
+  "id" : 72,
+  "nameKo" : "왕눈해",
+  "genusKo" : "해파리포켓몬",
+  "types" : [ "water", "poison" ],
+  "stats" : {
+    "hp" : 40,
+    "attack" : 40,
+    "defense" : 35,
+    "specialAttack" : 50,
+    "specialDefense" : 100,
+    "speed" : 70
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/72.png",
+  "flavorTextKo" : "몸 대부분이 수분이다. 수정 같은 눈에서 이상한 빔을 발사한다."
+}, {
+  "id" : 73,
+  "nameKo" : "독파리",
+  "genusKo" : "해파리포켓몬",
+  "types" : [ "water", "poison" ],
+  "stats" : {
+    "hp" : 80,
+    "attack" : 70,
+    "defense" : 65,
+    "specialAttack" : 80,
+    "specialDefense" : 120,
+    "speed" : 100
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/73.png",
+  "flavorTextKo" : "촉수는 평소에는 짧고 먹이를 찌를 때 길게 늘어나 휘감는다."
+}, {
+  "id" : 74,
+  "nameKo" : "꼬마돌",
+  "genusKo" : "암석포켓몬",
+  "types" : [ "rock", "ground" ],
+  "stats" : {
+    "hp" : 40,
+    "attack" : 80,
+    "defense" : 100,
+    "specialAttack" : 30,
+    "specialDefense" : 30,
+    "speed" : 20
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/74.png",
+  "flavorTextKo" : "초원이나 산에 서식한다. 돌멩이와 닮은 탓에 알아채지 못하고 밟거나 발이 걸려 넘어지기도 한다."
+}, {
+  "id" : 75,
+  "nameKo" : "데구리",
+  "genusKo" : "암석포켓몬",
+  "types" : [ "rock", "ground" ],
+  "stats" : {
+    "hp" : 55,
+    "attack" : 95,
+    "defense" : 115,
+    "specialAttack" : 45,
+    "specialDefense" : 45,
+    "speed" : 35
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/75.png",
+  "flavorTextKo" : "산에서 굴러 떨어질 때 몸의 여기저기가 부서져도 신경 쓰지 않는 호쾌한 성격이다."
+}, {
+  "id" : 76,
+  "nameKo" : "딱구리",
+  "genusKo" : "메가톤포켓몬",
+  "types" : [ "rock", "ground" ],
+  "stats" : {
+    "hp" : 80,
+    "attack" : 120,
+    "defense" : 130,
+    "specialAttack" : 55,
+    "specialDefense" : 65,
+    "speed" : 45
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/76.png",
+  "flavorTextKo" : "산 정상에서 산기슭까지 이어지는 움푹 패인 홈은 딱구리가 굴러 다니는 길이므로 주의가 필요하다."
+}, {
+  "id" : 77,
+  "nameKo" : "포니타",
+  "genusKo" : "불의말포켓몬",
+  "types" : [ "fire" ],
+  "stats" : {
+    "hp" : 50,
+    "attack" : 85,
+    "defense" : 55,
+    "specialAttack" : 65,
+    "specialDefense" : 65,
+    "speed" : 90
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/77.png",
+  "flavorTextKo" : "막 태어나서는 겨우 일어설 수 있을 정도이지만 많이 달리면 하반신이 단련되어 달리는 속도가 빨라진다."
+}, {
+  "id" : 78,
+  "nameKo" : "날쌩마",
+  "genusKo" : "불의말포켓몬",
+  "types" : [ "fire" ],
+  "stats" : {
+    "hp" : 65,
+    "attack" : 100,
+    "defense" : 70,
+    "specialAttack" : 80,
+    "specialDefense" : 80,
+    "speed" : 105
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/78.png",
+  "flavorTextKo" : "빠르게 움직이는 물체를 보면 경주를 하고 싶어져서 맹렬한 스피드로 쫓아가기 시작한다."
+}, {
+  "id" : 79,
+  "nameKo" : "야돈",
+  "genusKo" : "얼간이포켓몬",
+  "types" : [ "water", "psychic" ],
+  "stats" : {
+    "hp" : 90,
+    "attack" : 65,
+    "defense" : 65,
+    "specialAttack" : 40,
+    "specialDefense" : 40,
+    "speed" : 15
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/79.png",
+  "flavorTextKo" : "항상 멍하니 있으므로 무슨 생각을 하고 있는지 알 수 없다. 꼬리로 먹이를 낚는 것이 특기다."
+}, {
+  "id" : 80,
+  "nameKo" : "야도란",
+  "genusKo" : "기생포켓몬",
+  "types" : [ "water", "psychic" ],
+  "stats" : {
+    "hp" : 95,
+    "attack" : 75,
+    "defense" : 110,
+    "specialAttack" : 100,
+    "specialDefense" : 80,
+    "speed" : 30
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/80.png",
+  "flavorTextKo" : "붙어 있는 셀러는 꼬리에서 배어 나오는 맛을 좋아해서 계속 떨어지지 않는다."
+}, {
+  "id" : 81,
+  "nameKo" : "코일",
+  "genusKo" : "자석포켓몬",
+  "types" : [ "electric", "steel" ],
+  "stats" : {
+    "hp" : 25,
+    "attack" : 35,
+    "defense" : 70,
+    "specialAttack" : 95,
+    "specialDefense" : 55,
+    "speed" : 45
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/81.png",
+  "flavorTextKo" : "좌우의 유닛에서 중력을 차단하는 힘을 발휘하기에 공중에 뜰 수 있다."
+}, {
+  "id" : 82,
+  "nameKo" : "레어코일",
+  "genusKo" : "자석포켓몬",
+  "types" : [ "electric", "steel" ],
+  "stats" : {
+    "hp" : 50,
+    "attack" : 60,
+    "defense" : 95,
+    "specialAttack" : 120,
+    "specialDefense" : 70,
+    "speed" : 70
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/82.png",
+  "flavorTextKo" : "다수의 코일이 연결되어 강력한 자기장과 높은 전압을 방사한다."
+}, {
+  "id" : 83,
+  "nameKo" : "파오리",
+  "genusKo" : "청둥오리포켓몬",
+  "types" : [ "normal", "flying" ],
+  "stats" : {
+    "hp" : 52,
+    "attack" : 90,
+    "defense" : 55,
+    "specialAttack" : 58,
+    "specialDefense" : 62,
+    "speed" : 60
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/83.png",
+  "flavorTextKo" : "가지고 있는 파 줄기는 소중한 무기이기도 하며 칼을 휘두르듯 다양한 것을 자를 수 있다."
+}, {
+  "id" : 84,
+  "nameKo" : "두두",
+  "genusKo" : "쌍둥이새포켓몬",
+  "types" : [ "normal", "flying" ],
+  "stats" : {
+    "hp" : 35,
+    "attack" : 85,
+    "defense" : 45,
+    "specialAttack" : 35,
+    "specialDefense" : 35,
+    "speed" : 75
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/84.png",
+  "flavorTextKo" : "돌연변이로 발견된 두 개의 머리를 지닌 포켓몬이다. 시속 100km로 달린다."
+}, {
+  "id" : 85,
+  "nameKo" : "두트리오",
+  "genusKo" : "세쌍둥이새포켓몬",
+  "types" : [ "normal", "flying" ],
+  "stats" : {
+    "hp" : 60,
+    "attack" : 110,
+    "defense" : 70,
+    "specialAttack" : 60,
+    "specialDefense" : 60,
+    "speed" : 110
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/85.png",
+  "flavorTextKo" : "3개의 머리가 보고 있는 앞에서 조금이라도 빈틈을 보이면 부리로 격렬하게 쪼아댄다."
+}, {
+  "id" : 86,
+  "nameKo" : "쥬쥬",
+  "genusKo" : "강치포켓몬",
+  "types" : [ "water" ],
+  "stats" : {
+    "hp" : 65,
+    "attack" : 45,
+    "defense" : 55,
+    "specialAttack" : 45,
+    "specialDefense" : 70,
+    "speed" : 45
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/86.png",
+  "flavorTextKo" : "빙산에 사는 포켓몬이다. 머리의 뾰족하게 돌출된 부분으로 얼음을 깨고 바다를 헤엄친다."
+}, {
+  "id" : 87,
+  "nameKo" : "쥬레곤",
+  "genusKo" : "강치포켓몬",
+  "types" : [ "water", "ice" ],
+  "stats" : {
+    "hp" : 90,
+    "attack" : 70,
+    "defense" : 80,
+    "specialAttack" : 70,
+    "specialDefense" : 95,
+    "speed" : 70
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/87.png",
+  "flavorTextKo" : "전신이 새하얀 털로 뒤덮여 있다. 추위에 강해서 오히려 추울수록 힘이 넘쳐 난다."
+}, {
+  "id" : 88,
+  "nameKo" : "질퍽이",
+  "genusKo" : "진흙포켓몬",
+  "types" : [ "poison" ],
+  "stats" : {
+    "hp" : 80,
+    "attack" : 80,
+    "defense" : 50,
+    "specialAttack" : 40,
+    "specialDefense" : 50,
+    "speed" : 25
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/88.png",
+  "flavorTextKo" : "달로부터의 X선을 쬔 오물이 질퍽이로 변화했다. 더러운 것을 좋아한다."
+}, {
+  "id" : 89,
+  "nameKo" : "질뻐기",
+  "genusKo" : "진흙포켓몬",
+  "types" : [ "poison" ],
+  "stats" : {
+    "hp" : 105,
+    "attack" : 105,
+    "defense" : 75,
+    "specialAttack" : 65,
+    "specialDefense" : 100,
+    "speed" : 50
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/89.png",
+  "flavorTextKo" : "진흙이 쌓여 악취가 나는 장소를 좋아해서 모여들기 때문에 주변은 더욱 악취가 난다."
+}, {
+  "id" : 90,
+  "nameKo" : "셀러",
+  "genusKo" : "두조개포켓몬",
+  "types" : [ "water" ],
+  "stats" : {
+    "hp" : 30,
+    "attack" : 65,
+    "defense" : 100,
+    "specialAttack" : 45,
+    "specialDefense" : 25,
+    "speed" : 40
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/90.png",
+  "flavorTextKo" : "단단한 껍데기는 어떤 공격도 튕겨낸다. 껍데기를 벌리고 있을 때 안쪽을 공격당하는 것에는 약하다."
+}, {
+  "id" : 91,
+  "nameKo" : "파르셀",
+  "genusKo" : "두조개포켓몬",
+  "types" : [ "water", "ice" ],
+  "stats" : {
+    "hp" : 50,
+    "attack" : 95,
+    "defense" : 180,
+    "specialAttack" : 85,
+    "specialDefense" : 45,
+    "speed" : 70
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/91.png",
+  "flavorTextKo" : "조수의 흐름이 격한 바다에 서식하고 있는 파르셀의 껍질의 가시는 크고 날카롭다."
+}, {
+  "id" : 92,
+  "nameKo" : "고오스",
+  "genusKo" : "가스포켓몬",
+  "types" : [ "ghost", "poison" ],
+  "stats" : {
+    "hp" : 30,
+    "attack" : 35,
+    "defense" : 30,
+    "specialAttack" : 100,
+    "specialDefense" : 35,
+    "speed" : 80
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/92.png",
+  "flavorTextKo" : "가스로 만들어진 몸은 어떠한 크기의 상대라도 둘러싸서 숨을 못 쉬게 한다."
+}, {
+  "id" : 93,
+  "nameKo" : "고우스트",
+  "genusKo" : "가스포켓몬",
+  "types" : [ "ghost", "poison" ],
+  "stats" : {
+    "hp" : 45,
+    "attack" : 50,
+    "defense" : 45,
+    "specialAttack" : 115,
+    "specialDefense" : 55,
+    "speed" : 95
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/93.png",
+  "flavorTextKo" : "어둠 속에서 아무도 없는데도 누군가가 보고 있다는 느낌이 들면 그곳에 고우스트가 있는 것이다."
+}, {
+  "id" : 94,
+  "nameKo" : "팬텀",
+  "genusKo" : "그림자포켓몬",
+  "types" : [ "ghost", "poison" ],
+  "stats" : {
+    "hp" : 60,
+    "attack" : 65,
+    "defense" : 60,
+    "specialAttack" : 130,
+    "specialDefense" : 75,
+    "speed" : 110
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png",
+  "flavorTextKo" : "그림자에 모습을 숨긴다. 팬텀이 숨어 있는 방은 온도가 5도 내려간다고 전해진다."
+}, {
+  "id" : 95,
+  "nameKo" : "롱스톤",
+  "genusKo" : "돌뱀포켓몬",
+  "types" : [ "rock", "ground" ],
+  "stats" : {
+    "hp" : 35,
+    "attack" : 45,
+    "defense" : 160,
+    "specialAttack" : 30,
+    "specialDefense" : 45,
+    "speed" : 70
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/95.png",
+  "flavorTextKo" : "땅속을 엄청난 기세로 뚫고 나아가며 먹이를 찾는다. 지나간 곳은 디그다의 보금자리가 된다."
+}, {
+  "id" : 96,
+  "nameKo" : "슬리프",
+  "genusKo" : "최면포켓몬",
+  "types" : [ "psychic" ],
+  "stats" : {
+    "hp" : 60,
+    "attack" : 48,
+    "defense" : 45,
+    "specialAttack" : 43,
+    "specialDefense" : 90,
+    "speed" : 42
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/96.png",
+  "flavorTextKo" : "잠들게 한 뒤 꿈을 먹지만 나쁜 꿈만 먹고 있으면 배탈이 날 때도 있는 것 같다."
+}, {
+  "id" : 97,
+  "nameKo" : "슬리퍼",
+  "genusKo" : "최면포켓몬",
+  "types" : [ "psychic" ],
+  "stats" : {
+    "hp" : 85,
+    "attack" : 73,
+    "defense" : 70,
+    "specialAttack" : 73,
+    "specialDefense" : 115,
+    "speed" : 67
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/97.png",
+  "flavorTextKo" : "추 같은 것을 들고 다닌다. 어린아이에게 최면술을 걸어 어딘가로 데려가 버린 사건이 있었다."
+}, {
+  "id" : 98,
+  "nameKo" : "크랩",
+  "genusKo" : "게포켓몬",
+  "types" : [ "water" ],
+  "stats" : {
+    "hp" : 30,
+    "attack" : 105,
+    "defense" : 90,
+    "specialAttack" : 25,
+    "specialDefense" : 25,
+    "speed" : 50
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/98.png",
+  "flavorTextKo" : "위험이 닥치면 입에서 뿜어내는 거품으로 전신을 감싸서 몸을 크게 보이려고 한다."
+}, {
+  "id" : 99,
+  "nameKo" : "킹크랩",
+  "genusKo" : "집게포켓몬",
+  "types" : [ "water" ],
+  "stats" : {
+    "hp" : 55,
+    "attack" : 130,
+    "defense" : 115,
+    "specialAttack" : 50,
+    "specialDefense" : 50,
+    "speed" : 75
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/99.png",
+  "flavorTextKo" : "단단한 집게는 1만 마력의 파워를 지녔지만 너무 커서 움직임이 둔하다."
+}, {
+  "id" : 100,
+  "nameKo" : "찌리리공",
+  "genusKo" : "볼포켓몬",
+  "types" : [ "electric" ],
+  "stats" : {
+    "hp" : 40,
+    "attack" : 30,
+    "defense" : 50,
+    "specialAttack" : 55,
+    "specialDefense" : 55,
+    "speed" : 100
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/100.png",
+  "flavorTextKo" : "몬스터볼이 팔리기 시작했을 때와 같은 시기에 발견되었다. 뭔가 관계가 있다고 전해진다."
+}, {
+  "id" : 101,
+  "nameKo" : "붐볼",
+  "genusKo" : "볼포켓몬",
+  "types" : [ "electric" ],
+  "stats" : {
+    "hp" : 60,
+    "attack" : 50,
+    "defense" : 70,
+    "specialAttack" : 80,
+    "specialDefense" : 80,
+    "speed" : 150
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/101.png",
+  "flavorTextKo" : "작은 자극에도 반응해서 폭발한다. 폭탄볼이라 불리며 두려움의 대상이 되고 있다."
+}, {
+  "id" : 102,
+  "nameKo" : "아라리",
+  "genusKo" : "알포켓몬",
+  "types" : [ "grass", "psychic" ],
+  "stats" : {
+    "hp" : 60,
+    "attack" : 40,
+    "defense" : 80,
+    "specialAttack" : 60,
+    "specialDefense" : 45,
+    "speed" : 40
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/102.png",
+  "flavorTextKo" : "텔레파시로 대화를 하기 때문에 아라리를 갈라놓으려 해도 바로 모여들어 6마리가 된다."
+}, {
+  "id" : 103,
+  "nameKo" : "나시",
+  "genusKo" : "야자열매포켓몬",
+  "types" : [ "grass", "psychic" ],
+  "stats" : {
+    "hp" : 95,
+    "attack" : 95,
+    "defense" : 85,
+    "specialAttack" : 125,
+    "specialDefense" : 75,
+    "speed" : 55
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/103.png",
+  "flavorTextKo" : "3개의 머리는 생각하는 것이 각각 다르지만 사이가 좋아서 싸우지 않는 것 같다."
+}, {
+  "id" : 104,
+  "nameKo" : "탕구리",
+  "genusKo" : "고독포켓몬",
+  "types" : [ "ground" ],
+  "stats" : {
+    "hp" : 50,
+    "attack" : 50,
+    "defense" : 95,
+    "specialAttack" : 40,
+    "specialDefense" : 50,
+    "speed" : 35
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/104.png",
+  "flavorTextKo" : "죽은 어미의 해골을 머리에 쓰고 있다. 외로울 때는 큰 소리로 운다고 한다."
+}, {
+  "id" : 105,
+  "nameKo" : "텅구리",
+  "genusKo" : "뼈다귀포켓몬",
+  "types" : [ "ground" ],
+  "stats" : {
+    "hp" : 60,
+    "attack" : 80,
+    "defense" : 110,
+    "specialAttack" : 50,
+    "specialDefense" : 80,
+    "speed" : 45
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/105.png",
+  "flavorTextKo" : "몸집도 작으며 원래는 약했다. 뼈를 쓰기 시작하면서 성격이 흉포해졌다."
+}, {
+  "id" : 106,
+  "nameKo" : "시라소몬",
+  "genusKo" : "킥포켓몬",
+  "types" : [ "fighting" ],
+  "stats" : {
+    "hp" : 50,
+    "attack" : 120,
+    "defense" : 53,
+    "specialAttack" : 35,
+    "specialDefense" : 110,
+    "speed" : 87
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/106.png",
+  "flavorTextKo" : "다리를 자유자재로 늘였다 줄였다 한다. 멀리 떨어져 있을 때도 상대를 차올릴 수 있다."
+}, {
+  "id" : 107,
+  "nameKo" : "홍수몬",
+  "genusKo" : "펀치포켓몬",
+  "types" : [ "fighting" ],
+  "stats" : {
+    "hp" : 50,
+    "attack" : 105,
+    "defense" : 79,
+    "specialAttack" : 35,
+    "specialDefense" : 110,
+    "speed" : 76
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/107.png",
+  "flavorTextKo" : "팔을 비틀며 날리는 펀치는 콘크리트도 부스러뜨린다. 3분 싸우면 잠시 쉰다."
+}, {
+  "id" : 108,
+  "nameKo" : "내루미",
+  "genusKo" : "핥기포켓몬",
+  "types" : [ "normal" ],
+  "stats" : {
+    "hp" : 90,
+    "attack" : 55,
+    "defense" : 75,
+    "specialAttack" : 60,
+    "specialDefense" : 75,
+    "speed" : 30
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/108.png",
+  "flavorTextKo" : "긴 혀는 끈적끈적한 침으로 덮여 있다. 어떤 것이든 달라붙어서 매우 편리하다."
+}, {
+  "id" : 109,
+  "nameKo" : "또가스",
+  "genusKo" : "독가스포켓몬",
+  "types" : [ "poison" ],
+  "stats" : {
+    "hp" : 40,
+    "attack" : 65,
+    "defense" : 95,
+    "specialAttack" : 60,
+    "specialDefense" : 45,
+    "speed" : 35
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/109.png",
+  "flavorTextKo" : "얇고 풍선 같은 몸에 맹독 가스가 차있다. 가까이 오면 역겨운 냄새가 난다."
+}, {
+  "id" : 110,
+  "nameKo" : "또도가스",
+  "genusKo" : "독가스포켓몬",
+  "types" : [ "poison" ],
+  "stats" : {
+    "hp" : 65,
+    "attack" : 90,
+    "defense" : 120,
+    "specialAttack" : 85,
+    "specialDefense" : 70,
+    "speed" : 60
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/110.png",
+  "flavorTextKo" : "한쪽이 부풀어 오르면 다른 한쪽은 오그라드는 쌍둥이 또가스. 항상 체내의 독가스를 섞고 있다."
+}, {
+  "id" : 111,
+  "nameKo" : "뿔카노",
+  "genusKo" : "뿔포켓몬",
+  "types" : [ "ground", "rock" ],
+  "stats" : {
+    "hp" : 80,
+    "attack" : 85,
+    "defense" : 95,
+    "specialAttack" : 30,
+    "specialDefense" : 30,
+    "speed" : 25
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/111.png",
+  "flavorTextKo" : "머리는 나쁘지만 힘이 세서 고층 빌딩도 몸통박치기로 산산조각 낸다."
+}, {
+  "id" : 112,
+  "nameKo" : "코뿌리",
+  "genusKo" : "드릴포켓몬",
+  "types" : [ "ground", "rock" ],
+  "stats" : {
+    "hp" : 105,
+    "attack" : 130,
+    "defense" : 120,
+    "specialAttack" : 45,
+    "specialDefense" : 45,
+    "speed" : 40
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/112.png",
+  "flavorTextKo" : "전신을 갑옷 같은 피부로 보호하고 있다. 2000도의 마그마 속에서도 살 수 있다."
+}, {
+  "id" : 113,
+  "nameKo" : "럭키",
+  "genusKo" : "알포켓몬",
+  "types" : [ "normal" ],
+  "stats" : {
+    "hp" : 250,
+    "attack" : 5,
+    "defense" : 5,
+    "specialAttack" : 35,
+    "specialDefense" : 105,
+    "speed" : 50
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/113.png",
+  "flavorTextKo" : "행복을 가져다준다고 전해진다. 상처 입은 사람에게 알을 나눠주는 상냥한 포켓몬이다."
+}, {
+  "id" : 114,
+  "nameKo" : "덩쿠리",
+  "genusKo" : "넝쿨포켓몬",
+  "types" : [ "grass" ],
+  "stats" : {
+    "hp" : 65,
+    "attack" : 55,
+    "defense" : 115,
+    "specialAttack" : 100,
+    "specialDefense" : 40,
+    "speed" : 60
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/114.png",
+  "flavorTextKo" : "수많은 움직이는 덩굴에 둘러싸여 정체불명이다. 파란 덩굴은 평생 자란다."
+}, {
+  "id" : 115,
+  "nameKo" : "캥카",
+  "genusKo" : "가족포켓몬",
+  "types" : [ "normal" ],
+  "stats" : {
+    "hp" : 105,
+    "attack" : 95,
+    "defense" : 80,
+    "specialAttack" : 40,
+    "specialDefense" : 80,
+    "speed" : 90
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/115.png",
+  "flavorTextKo" : "배의 주머니에서 새끼를 키운다. 안전할 때만 새끼를 주머니에서 꺼내어 놀게 한다."
+}, {
+  "id" : 116,
+  "nameKo" : "쏘드라",
+  "genusKo" : "드래곤포켓몬",
+  "types" : [ "water" ],
+  "stats" : {
+    "hp" : 30,
+    "attack" : 40,
+    "defense" : 70,
+    "specialAttack" : 70,
+    "specialDefense" : 25,
+    "speed" : 60
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/116.png",
+  "flavorTextKo" : "수면에서 힘차게 먹물을 발사해서 날고 있는 벌레를 맞춰서 떨어뜨릴 때가 있다고 한다."
+}, {
+  "id" : 117,
+  "nameKo" : "시드라",
+  "genusKo" : "드래곤포켓몬",
+  "types" : [ "water" ],
+  "stats" : {
+    "hp" : 55,
+    "attack" : 65,
+    "defense" : 95,
+    "specialAttack" : 95,
+    "specialDefense" : 45,
+    "speed" : 85
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/117.png",
+  "flavorTextKo" : "섣불리 만지려고 하면 몸 전체에서 돋아나는 가시에 찔려 기절할 수도 있다."
+}, {
+  "id" : 118,
+  "nameKo" : "콘치",
+  "genusKo" : "금붕어포켓몬",
+  "types" : [ "water" ],
+  "stats" : {
+    "hp" : 45,
+    "attack" : 67,
+    "defense" : 60,
+    "specialAttack" : 35,
+    "specialDefense" : 50,
+    "speed" : 63
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/118.png",
+  "flavorTextKo" : "5노트의 스피드로 헤엄친다. 몸에 위험을 느끼면 날카로운 뿔로 반격한다."
+}, {
+  "id" : 119,
+  "nameKo" : "왕콘치",
+  "genusKo" : "금붕어포켓몬",
+  "types" : [ "water" ],
+  "stats" : {
+    "hp" : 80,
+    "attack" : 92,
+    "defense" : 65,
+    "specialAttack" : 65,
+    "specialDefense" : 80,
+    "speed" : 68
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/119.png",
+  "flavorTextKo" : "가을이 오면 산란을 위해 힘차게 강물을 거슬러 올라가며 헤엄치는 모습을 볼 수 있다."
+}, {
+  "id" : 120,
+  "nameKo" : "별가사리",
+  "genusKo" : "별포켓몬",
+  "types" : [ "water" ],
+  "stats" : {
+    "hp" : 30,
+    "attack" : 45,
+    "defense" : 55,
+    "specialAttack" : 70,
+    "specialDefense" : 55,
+    "speed" : 85
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/120.png",
+  "flavorTextKo" : "몸의 중심에서 빛나는 핵이 있는 한 몸이 찢겨나가도 재생할 수 있다."
+}, {
+  "id" : 121,
+  "nameKo" : "아쿠스타",
+  "genusKo" : "수수께끼포켓몬",
+  "types" : [ "water", "psychic" ],
+  "stats" : {
+    "hp" : 60,
+    "attack" : 75,
+    "defense" : 85,
+    "specialAttack" : 100,
+    "specialDefense" : 85,
+    "speed" : 115
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/121.png",
+  "flavorTextKo" : "코어라고 불리는 중심 부분은 일곱 빛깔로 빛난다. 이것을 보석으로 삼는 사람도 있다고 한다."
+}, {
+  "id" : 122,
+  "nameKo" : "마임맨",
+  "genusKo" : "배리어포켓몬",
+  "types" : [ "psychic", "fairy" ],
+  "stats" : {
+    "hp" : 40,
+    "attack" : 45,
+    "defense" : 65,
+    "specialAttack" : 100,
+    "specialDefense" : 120,
+    "speed" : 90
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/122.png",
+  "flavorTextKo" : "손가락 끝에서 내는 파동이 공기를 굳혀서 벽을 만든다. 격렬한 공격도 튕겨 낸다."
+}, {
+  "id" : 123,
+  "nameKo" : "스라크",
+  "genusKo" : "버마재비포켓몬",
+  "types" : [ "bug", "flying" ],
+  "stats" : {
+    "hp" : 70,
+    "attack" : 110,
+    "defense" : 80,
+    "specialAttack" : 55,
+    "specialDefense" : 80,
+    "speed" : 105
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/123.png",
+  "flavorTextKo" : "날카로운 낫으로 먹이를 베고 숨통을 끊는다. 매우 드물게 날개를 사용해서 난다."
+}, {
+  "id" : 124,
+  "nameKo" : "루주라",
+  "genusKo" : "인간형태포켓몬",
+  "types" : [ "ice", "psychic" ],
+  "stats" : {
+    "hp" : 65,
+    "attack" : 50,
+    "defense" : 35,
+    "specialAttack" : 115,
+    "specialDefense" : 95,
+    "speed" : 95
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/124.png",
+  "flavorTextKo" : "허리를 흔드는 듯이 걷고 있다. 방심하면 엉겁결에 따라서 춤춰버린다고 한다."
+}, {
+  "id" : 125,
+  "nameKo" : "에레브",
+  "genusKo" : "전기포켓몬",
+  "types" : [ "electric" ],
+  "stats" : {
+    "hp" : 65,
+    "attack" : 83,
+    "defense" : 57,
+    "specialAttack" : 95,
+    "specialDefense" : 85,
+    "speed" : 105
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/125.png",
+  "flavorTextKo" : "몸의 표면에는 전기가 흐르고 있다. 주변이 어두우면 전신이 푸르스름하게 빛난다."
+}, {
+  "id" : 126,
+  "nameKo" : "마그마",
+  "genusKo" : "불뿜기포켓몬",
+  "types" : [ "fire" ],
+  "stats" : {
+    "hp" : 65,
+    "attack" : 95,
+    "defense" : 57,
+    "specialAttack" : 100,
+    "specialDefense" : 85,
+    "speed" : 93
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/126.png",
+  "flavorTextKo" : "화산의 분화구 근처에서 발견되었다. 입에서 불꽃을 뿜어낸다. 체온은 1200도나 된다."
+}, {
+  "id" : 127,
+  "nameKo" : "쁘사이저",
+  "genusKo" : "뿔집게포켓몬",
+  "types" : [ "bug" ],
+  "stats" : {
+    "hp" : 65,
+    "attack" : 125,
+    "defense" : 100,
+    "specialAttack" : 55,
+    "specialDefense" : 70,
+    "speed" : 85
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/127.png",
+  "flavorTextKo" : "2개의 뿔 사이에 먹이를 끼우고 조각날 때까지 놓지 않는다. 조각나지 않으면 저편으로 세게 내던진다."
+}, {
+  "id" : 128,
+  "nameKo" : "켄타로스",
+  "genusKo" : "성난소포켓몬",
+  "types" : [ "normal" ],
+  "stats" : {
+    "hp" : 75,
+    "attack" : 100,
+    "defense" : 95,
+    "specialAttack" : 40,
+    "specialDefense" : 70,
+    "speed" : 110
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/128.png",
+  "flavorTextKo" : "3개의 꼬리로 자신을 때려서 투지가 끓어오르면 전속력으로 돌진해온다."
+}, {
+  "id" : 129,
+  "nameKo" : "잉어킹",
+  "genusKo" : "물고기포켓몬",
+  "types" : [ "water" ],
+  "stats" : {
+    "hp" : 20,
+    "attack" : 10,
+    "defense" : 55,
+    "specialAttack" : 15,
+    "specialDefense" : 20,
+    "speed" : 80
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/129.png",
+  "flavorTextKo" : "힘도 스피드도 거의 없다. 세상에서 가장 약하고 한심한 포켓몬이다."
+}, {
+  "id" : 130,
+  "nameKo" : "갸라도스",
+  "genusKo" : "흉악포켓몬",
+  "types" : [ "water", "flying" ],
+  "stats" : {
+    "hp" : 95,
+    "attack" : 125,
+    "defense" : 79,
+    "specialAttack" : 60,
+    "specialDefense" : 100,
+    "speed" : 81
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/130.png",
+  "flavorTextKo" : "분쟁이 일어난 마을을 다 태워버렸다는 기록이 고문서에 남아 있다."
+}, {
+  "id" : 131,
+  "nameKo" : "라프라스",
+  "genusKo" : "탈것포켓몬",
+  "types" : [ "water", "ice" ],
+  "stats" : {
+    "hp" : 130,
+    "attack" : 85,
+    "defense" : 80,
+    "specialAttack" : 85,
+    "specialDefense" : 95,
+    "speed" : 60
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/131.png",
+  "flavorTextKo" : "부드러운 마음의 소유자다. 좀처럼 다투지 않아 많이 잡혔기 때문에 수가 줄었다."
+}, {
+  "id" : 132,
+  "nameKo" : "메타몽",
+  "genusKo" : "변신포켓몬",
+  "types" : [ "normal" ],
+  "stats" : {
+    "hp" : 48,
+    "attack" : 48,
+    "defense" : 48,
+    "specialAttack" : 48,
+    "specialDefense" : 48,
+    "speed" : 48
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png",
+  "flavorTextKo" : "전신의 세포를 재구성해서 본 것의 모양과 똑 닮게 변신하는 능력을 가지고 있다."
+}, {
+  "id" : 133,
+  "nameKo" : "이브이",
+  "genusKo" : "진화포켓몬",
+  "types" : [ "normal" ],
+  "stats" : {
+    "hp" : 55,
+    "attack" : 55,
+    "defense" : 50,
+    "specialAttack" : 45,
+    "specialDefense" : 65,
+    "speed" : 55
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png",
+  "flavorTextKo" : "진화할 때 모습과 능력이 바뀜으로써 혹독한 환경에 적응하는 희귀한 포켓몬이다."
+}, {
+  "id" : 134,
+  "nameKo" : "샤미드",
+  "genusKo" : "거품뿜기포켓몬",
+  "types" : [ "water" ],
+  "stats" : {
+    "hp" : 130,
+    "attack" : 65,
+    "defense" : 60,
+    "specialAttack" : 110,
+    "specialDefense" : 95,
+    "speed" : 65
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/134.png",
+  "flavorTextKo" : "아름다운 물가를 좋아한다. 세포가 물의 분자구조와 닮아서 물에 녹는 것도 가능하다."
+}, {
+  "id" : 135,
+  "nameKo" : "쥬피썬더",
+  "genusKo" : "번개포켓몬",
+  "types" : [ "electric" ],
+  "stats" : {
+    "hp" : 65,
+    "attack" : 65,
+    "defense" : 60,
+    "specialAttack" : 110,
+    "specialDefense" : 95,
+    "speed" : 130
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/135.png",
+  "flavorTextKo" : "체내에 전기가 모이면 전신의 털이 모두 날카롭게 곤두서기 시작한다."
+}, {
+  "id" : 136,
+  "nameKo" : "부스터",
+  "genusKo" : "불꽃포켓몬",
+  "types" : [ "fire" ],
+  "stats" : {
+    "hp" : 65,
+    "attack" : 130,
+    "defense" : 60,
+    "specialAttack" : 95,
+    "specialDefense" : 110,
+    "speed" : 65
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/136.png",
+  "flavorTextKo" : "체내에 불꽃 주머니를 가지고 있다. 싸움이 시작되기 직전에는 체온이 900도까지 올라간다."
+}, {
+  "id" : 137,
+  "nameKo" : "폴리곤",
+  "genusKo" : "가상포켓몬",
+  "types" : [ "normal" ],
+  "stats" : {
+    "hp" : 65,
+    "attack" : 60,
+    "defense" : 70,
+    "specialAttack" : 85,
+    "specialDefense" : 75,
+    "speed" : 40
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/137.png",
+  "flavorTextKo" : "연구 끝에 태어난 인공 포켓몬이다. 기본적인 동작만 프로그램되어 있다."
+}, {
+  "id" : 138,
+  "nameKo" : "암나이트",
+  "genusKo" : "소용돌이포켓몬",
+  "types" : [ "rock", "water" ],
+  "stats" : {
+    "hp" : 35,
+    "attack" : 40,
+    "defense" : 100,
+    "specialAttack" : 90,
+    "specialDefense" : 55,
+    "speed" : 35
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/138.png",
+  "flavorTextKo" : "먼 옛날 바다에서 살고 있던 고대 포켓몬. 10개의 다리를 구불거리며 헤엄친다."
+}, {
+  "id" : 139,
+  "nameKo" : "암스타",
+  "genusKo" : "소용돌이포켓몬",
+  "types" : [ "rock", "water" ],
+  "stats" : {
+    "hp" : 70,
+    "attack" : 60,
+    "defense" : 125,
+    "specialAttack" : 115,
+    "specialDefense" : 70,
+    "speed" : 55
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/139.png",
+  "flavorTextKo" : "촉수가 팔다리처럼 발달해 있다. 달라붙자마자 문다."
+}, {
+  "id" : 140,
+  "nameKo" : "투구",
+  "genusKo" : "껍질포켓몬",
+  "types" : [ "rock", "water" ],
+  "stats" : {
+    "hp" : 30,
+    "attack" : 80,
+    "defense" : 90,
+    "specialAttack" : 55,
+    "specialDefense" : 45,
+    "speed" : 55
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/140.png",
+  "flavorTextKo" : "3억 년 전에 모래 해변에서 살고 있었던 것으로 추측된다. 단단한 껍질이 몸을 보호한다."
+}, {
+  "id" : 141,
+  "nameKo" : "투구푸스",
+  "genusKo" : "껍질포켓몬",
+  "types" : [ "rock", "water" ],
+  "stats" : {
+    "hp" : 60,
+    "attack" : 115,
+    "defense" : 105,
+    "specialAttack" : 65,
+    "specialDefense" : 70,
+    "speed" : 80
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/141.png",
+  "flavorTextKo" : "수중을 이동할 때 손발을 작게 접고 등껍질을 구부려 빠르게 헤엄친다."
+}, {
+  "id" : 142,
+  "nameKo" : "프테라",
+  "genusKo" : "화석포켓몬",
+  "types" : [ "rock", "flying" ],
+  "stats" : {
+    "hp" : 80,
+    "attack" : 105,
+    "defense" : 65,
+    "specialAttack" : 60,
+    "specialDefense" : 75,
+    "speed" : 130
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/142.png",
+  "flavorTextKo" : "호박에 남아 있던 공룡의 유전자에서 부활시켰다. 높은 소리로 울며 난다."
+}, {
+  "id" : 143,
+  "nameKo" : "잠만보",
+  "genusKo" : "졸음포켓몬",
+  "types" : [ "normal" ],
+  "stats" : {
+    "hp" : 160,
+    "attack" : 110,
+    "defense" : 65,
+    "specialAttack" : 65,
+    "specialDefense" : 110,
+    "speed" : 30
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png",
+  "flavorTextKo" : "하루에 먹을 것을 400kg 먹지 않으면 성에 차지 않는다. 다 먹으면 잠이 들어 버린다."
+}, {
+  "id" : 144,
+  "nameKo" : "프리져",
+  "genusKo" : "냉동포켓몬",
+  "types" : [ "ice", "flying" ],
+  "stats" : {
+    "hp" : 90,
+    "attack" : 85,
+    "defense" : 100,
+    "specialAttack" : 95,
+    "specialDefense" : 125,
+    "speed" : 85
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/144.png",
+  "flavorTextKo" : "전설의 새포켓몬이다. 공기 중의 수분을 얼려 눈보라를 만들어 낼 수 있다."
+}, {
+  "id" : 145,
+  "nameKo" : "썬더",
+  "genusKo" : "전기포켓몬",
+  "types" : [ "electric", "flying" ],
+  "stats" : {
+    "hp" : 90,
+    "attack" : 90,
+    "defense" : 85,
+    "specialAttack" : 125,
+    "specialDefense" : 90,
+    "speed" : 100
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/145.png",
+  "flavorTextKo" : "구름 위에서 거대한 번개를 내리치며 나타난다. 전설의 새포켓몬이다."
+}, {
+  "id" : 146,
+  "nameKo" : "파이어",
+  "genusKo" : "화염포켓몬",
+  "types" : [ "fire", "flying" ],
+  "stats" : {
+    "hp" : 90,
+    "attack" : 100,
+    "defense" : 90,
+    "specialAttack" : 125,
+    "specialDefense" : 85,
+    "speed" : 90
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/146.png",
+  "flavorTextKo" : "오래전부터 불새의 전설로 알려져 있다. 날갯짓할 때마다 날개가 눈부시게 불타올라서 아름답다."
+}, {
+  "id" : 147,
+  "nameKo" : "미뇽",
+  "genusKo" : "드래곤포켓몬",
+  "types" : [ "dragon" ],
+  "stats" : {
+    "hp" : 41,
+    "attack" : 64,
+    "defense" : 45,
+    "specialAttack" : 50,
+    "specialDefense" : 50,
+    "speed" : 50
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/147.png",
+  "flavorTextKo" : "목격자가 적기 때문에 환상의 포켓몬이라고 불리고 있다. 탈피한 껍질이 발견되고 있다."
+}, {
+  "id" : 148,
+  "nameKo" : "신뇽",
+  "genusKo" : "드래곤포켓몬",
+  "types" : [ "dragon" ],
+  "stats" : {
+    "hp" : 61,
+    "attack" : 84,
+    "defense" : 65,
+    "specialAttack" : 70,
+    "specialDefense" : 70,
+    "speed" : 70
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/148.png",
+  "flavorTextKo" : "수정 같은 구슬에는 날씨를 자유롭게 조종하는 능력이 담겨 있는 듯하다."
+}, {
+  "id" : 149,
+  "nameKo" : "망나뇽",
+  "genusKo" : "드래곤포켓몬",
+  "types" : [ "dragon", "flying" ],
+  "stats" : {
+    "hp" : 91,
+    "attack" : 134,
+    "defense" : 95,
+    "specialAttack" : 100,
+    "specialDefense" : 100,
+    "speed" : 80
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/149.png",
+  "flavorTextKo" : "커다란 몸집으로 하늘을 난다. 지구를 약 16시간 만에 일주한다."
+}, {
+  "id" : 150,
+  "nameKo" : "뮤츠",
+  "genusKo" : "유전포켓몬",
+  "types" : [ "psychic" ],
+  "stats" : {
+    "hp" : 106,
+    "attack" : 110,
+    "defense" : 90,
+    "specialAttack" : 154,
+    "specialDefense" : 90,
+    "speed" : 130
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png",
+  "flavorTextKo" : "한 과학자가 몇 년에 걸쳐 무서운 유전자의 연구를 계속한 결과 탄생했다."
+}, {
+  "id" : 151,
+  "nameKo" : "뮤",
+  "genusKo" : "신종포켓몬",
+  "types" : [ "psychic" ],
+  "stats" : {
+    "hp" : 100,
+    "attack" : 100,
+    "defense" : 100,
+    "specialAttack" : 100,
+    "specialDefense" : 100,
+    "speed" : 100
+  },
+  "spriteUrl" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/151.png",
+  "flavorTextKo" : "모든 기술을 사용하기 때문에 포켓몬의 조상이라고 생각하는 학자가 많다."
+} ]
