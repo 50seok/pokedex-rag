@@ -12,7 +12,7 @@
 
 | 영역 | 사용 |
 |---|---|
-| 백엔드 | Java 21, Spring Boot 3.x, Gradle |
+| 백엔드 | Java 21, Spring Boot 4.1.1, Gradle |
 | DB | PostgreSQL 16 + pgvector |
 | LLM · 임베딩 | Google Gemini API |
 | 프론트 | Thymeleaf + 바닐라 JS |
