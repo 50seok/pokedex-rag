@@ -21,9 +21,9 @@ public class GeminiEmbeddingService {
     private final RestClient restClient;
     private final String apiKey;
 
-    public GeminiEmbeddingService(@Value("${gemini.api.key}") String apiKey) {
+    public GeminiEmbeddingService(RestClient.Builder restClientBuilder, @Value("${gemini.api.key}") String apiKey) {
         this.apiKey = apiKey;
-        this.restClient = RestClient.create();
+        this.restClient = restClientBuilder.build();
     }
 
     public float[] embed(String text) {
