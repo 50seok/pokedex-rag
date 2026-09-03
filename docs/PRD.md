@@ -90,6 +90,7 @@ document  (id, source_type, source_id, title, content, embedding vector(768))
 - `document`가 RAG 검색 대상. `source_type`/`source_id`로 원본 행을 가리켜 **출처 링크**를 만든다
 - 벡터 검색은 `JdbcTemplate` 네이티브 쿼리(`embedding <=> ?` 코사인 거리), 나머지는 JPA
   → Spring Data JPA가 vector 타입을 다루지 못해서 이 지점만 분리한다
+- **`type`/`types`는 데이터·백엔드 전체에서 PokeAPI 영문 slug(`grass`, `rock`...)를 그대로 쓴다.** 18종류뿐인 값을 151+8개 레코드마다 한국어로 중복 저장하지 않고, 한국어 라벨은 M4에서 Thymeleaf 템플릿단의 매핑 테이블(`Map<String,String>` 18개) 하나로 변환한다. 그 외 `name`/`genus`/`flavorText`/`leader`/`badge`/`townName`은 애초에 한국어 값만 저장하므로(영문 대응값 없음) 별도 조치 불필요
 
 ## 8. RAG 파이프라인
 
