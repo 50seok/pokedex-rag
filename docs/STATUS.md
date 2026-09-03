@@ -12,16 +12,18 @@
 | LLM·임베딩 | Google Gemini API 무료 티어 | 키 미발급 |
 | CI | 미정 | — |
 
+> Spring Boot 버전 정정: PRD 작성 시점엔 3.x를 가정했으나 `start.spring.io` 기준 3.x가 지원 범위 밖으로 빠져 **4.1.1**로 진행함.
+
 ## 마지막 머지 PR
 
-없음 (레포 초기화 단계)
+없음 (M1 PR 생성 예정, 머지 후 갱신)
 
 ## 다음 작업
 
 **P0**
-- [ ] Spring Boot 프로젝트 생성 (Java 21, Gradle, 최신 3.x)
-- [ ] M1 — PokeAPI 수집 스크립트로 포켓몬 151건 JSON 확보
-- [ ] M1 — 마을 10건 · 도장 8건 수동 작성 (PokeAPI 에 한국어·서사 정보 없음)
+- [x] Spring Boot 프로젝트 생성 (Java 21, Gradle, 4.1.1) — 2026-09-03
+- [x] M1 — PokeAPI 수집기로 포켓몬 151건 확보 (`data/pokemon.json`) — 2026-09-03
+- [x] M1 — 마을 10건 · 도장 8건 작성, namu.wiki 개별 문서로 교차 검증 (`data/kanto-towns.json`, `data/kanto-gyms.json`) — 2026-09-03
 
 **P1**
 - [ ] M2 — 스키마 + pgvector + 임베딩 적재

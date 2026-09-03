@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "order": 1,
+    "townId": 3,
+    "townNameKo": "회색시티",
+    "leaderKo": "웅",
+    "type": "rock",
+    "badgeKo": "회색배지",
+    "description": "관동 최초의 체육관. 바위 타입을 주로 다루며, 방어력이 높은 포켓몬 상대로 첫 배지를 노리는 초보 트레이너들의 관문이다."
+  },
+  {
+    "id": 2,
+    "order": 2,
+    "townId": 4,
+    "townNameKo": "블루시티",
+    "leaderKo": "이슬",
+    "type": "water",
+    "badgeKo": "블루배지",
+    "description": "대형 수족관을 체육관 내부로 쓰는 물 타입 체육관. 로켓단이 도시 저택을 아지트로 쓰던 사건과 얽혀 있다."
+  },
+  {
+    "id": 3,
+    "order": 3,
+    "townId": 6,
+    "townNameKo": "갈색시티",
+    "leaderKo": "마티스",
+    "type": "electric",
+    "badgeKo": "오렌지배지",
+    "description": "전기 타입 체육관. 입구가 수풀로 막혀 있어 기술머신 '잘라내기'를 배워야 들어갈 수 있다."
+  },
+  {
+    "id": 4,
+    "order": 4,
+    "townId": 7,
+    "townNameKo": "무지개시티",
+    "leaderKo": "민화",
+    "type": "grass",
+    "badgeKo": "무지개배지",
+    "description": "풀 타입 체육관. 관동에서 가장 번화한 도시에 자리해 백화점·게임코너와 함께 관광객도 많이 찾는다."
+  },
+  {
+    "id": 5,
+    "order": 5,
+    "townId": 8,
+    "townNameKo": "연분홍시티",
+    "leaderKo": "독수",
+    "type": "poison",
+    "badgeKo": "핑크배지",
+    "description": "독 타입 체육관. 관장 독수는 이후 사천왕으로 승격하는 것으로 유명하다."
+  },
+  {
+    "id": 6,
+    "order": 6,
+    "townId": 9,
+    "townNameKo": "노랑시티",
+    "leaderKo": "초련",
+    "type": "psychic",
+    "badgeKo": "골드배지",
+    "description": "초능력 타입 체육관. 텔레포트로 방을 이동하는 독특한 구조라 실프 컴퍼니 사건을 먼저 해결해야 들어갈 수 있다."
+  },
+  {
+    "id": 7,
+    "order": 7,
+    "townId": 10,
+    "townNameKo": "홍련섬",
+    "leaderKo": "강연",
+    "type": "fire",
+    "badgeKo": "진홍색배지",
+    "description": "화산섬의 불꽃 타입 체육관. 퀴즈를 맞히면 별도 배틀 없이 통과할 수 있는 독특한 규칙이 있다."
+  },
+  {
+    "id": 8,
+    "order": 8,
+    "townId": 2,
+    "townNameKo": "상록시티",
+    "leaderKo": "비주기",
+    "type": "ground",
+    "badgeKo": "그린배지",
+    "description": "여행 초반부터 지나치는 도시지만 체육관은 배지 일곱 개를 모으기 전까지 닫혀 있는, 사실상의 마지막(여덟 번째) 관문. 관장 비주기는 로켓단의 두목이기도 하다."
+  }
+]
