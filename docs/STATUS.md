@@ -9,10 +9,12 @@
 | 앱 호스팅 | Render 무료 Web Service | 미설정 |
 | DB | Neon 무료 (PostgreSQL + pgvector) | 미설정 |
 | 로컬 DB | Docker Compose (`pgvector/pgvector:pg16`) | 미설정 |
-| LLM·임베딩 | Google Gemini API 무료 티어 | 키 미발급 |
-| CI | 미정 | — |
+| LLM·임베딩 | Google Gemini API 무료 티어 | 키 발급 완료 (`.env`) |
+| CI | [pr-gate](https://github.com/50seok/pokedex-rag/tree/dev/.github/workflows/pr-gate.yml) (자체 제작, Claude CLI로 diff P1~P3 리뷰) | 관찰 모드로 설치됨 — `dev` 베이스, auto-merge·required check 없음 |
 
 > Spring Boot 버전 정정: PRD 작성 시점엔 3.x를 가정했으나 `start.spring.io` 기준 3.x가 지원 범위 밖으로 빠져 **4.1.1**로 진행함.
+>
+> 브랜치 모델: **M3부터 PR base는 `main`이 아니라 `dev`.** pr-gate가 `dev`로 향하는 PR만 리뷰하기 때문(원래 설계 유지 — main 자동 머지는 M5 배포에 영향을 주므로 제외). `dev`→`main` 승격은 사람이 직접 한다. M2(PR #3)는 이 규칙 적용 전이라 예외적으로 `main`에 바로 머지됨.
 
 ## 마지막 머지 PR
 
