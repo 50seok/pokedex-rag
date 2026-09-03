@@ -1,0 +1,35 @@
+# 환경변수 · 시크릿 (절대 커밋 금지)
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+**/application-local.yml
+**/application-secret.yml
+
+# Gradle
+.gradle/
+build/
+out/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.classpath
+.project
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 로그
+*.log
+logs/
+
+# PokeAPI 원본 덤프 (중간 산출물, 가공본만 커밋)
+data/raw/
