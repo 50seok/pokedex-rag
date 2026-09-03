@@ -38,9 +38,11 @@ public class GeminiEmbeddingService {
                 .retrieve()
                 .body(EmbedResponse.class);
 
+        // outputDimensionality 요청을 서버가 무시하고 기본 3072차원 그대로 돌려주는 경우가 있어
+        // (실측 확인됨), Matryoshka 임베딩 특성을 이용해 앞쪽 768개로 클라이언트에서 잘라낸다.
         List<Float> values = response.embedding().values();
-        float[] result = new float[values.size()];
-        for (int i = 0; i < values.size(); i++) {
+        float[] result = new float[OUTPUT_DIMENSIONALITY];
+        for (int i = 0; i < OUTPUT_DIMENSIONALITY; i++) {
             result[i] = values.get(i);
         }
         return result;
