@@ -45,17 +45,16 @@ public class DataIngestRunner implements ApplicationRunner {
             "야돈은 어떤 특징이 있어?"
     );
 
-    private final ObjectMapper objectMapper;
+    private final ObjectMapper objectMapper = new ObjectMapper();
     private final PokemonRepository pokemonRepository;
     private final TownRepository townRepository;
     private final GymRepository gymRepository;
     private final DocumentRepository documentRepository;
     private final GeminiEmbeddingService embeddingService;
 
-    public DataIngestRunner(ObjectMapper objectMapper, PokemonRepository pokemonRepository,
-                             TownRepository townRepository, GymRepository gymRepository,
-                             DocumentRepository documentRepository, GeminiEmbeddingService embeddingService) {
-        this.objectMapper = objectMapper;
+    public DataIngestRunner(PokemonRepository pokemonRepository, TownRepository townRepository,
+                             GymRepository gymRepository, DocumentRepository documentRepository,
+                             GeminiEmbeddingService embeddingService) {
         this.pokemonRepository = pokemonRepository;
         this.townRepository = townRepository;
         this.gymRepository = gymRepository;
