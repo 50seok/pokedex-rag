@@ -1,6 +1,6 @@
 # STATUS — 관동 도감 (pokedex-rag)
 
-> 마지막 갱신: 2026-09-03
+> 마지막 갱신: 2026-09-04
 
 ## 인프라
 
@@ -16,7 +16,7 @@
 
 ## 마지막 머지 PR
 
-없음 (M1 PR 생성 예정, 머지 후 갱신)
+[#3 — feat: M2 스키마 + pgvector + 임베딩 적재](https://github.com/50seok/pokedex-rag/pull/3) (Closes #2) — 2026-09-04
 
 ## 다음 작업
 
@@ -24,12 +24,12 @@
 - [x] Spring Boot 프로젝트 생성 (Java 21, Gradle, 4.1.1) — 2026-09-03
 - [x] M1 — PokeAPI 수집기로 포켓몬 151건 확보 (`data/pokemon.json`) — 2026-09-03
 - [x] M1 — 마을 10건 · 도장 8건 작성, namu.wiki 개별 문서로 교차 검증 (`data/kanto-towns.json`, `data/kanto-gyms.json`) — 2026-09-03
+- [x] M2 — 스키마 + pgvector + 임베딩 적재 (Flyway, Pokemon/Town/Gym 엔티티, DocumentRepository, GeminiEmbeddingService, DataIngestRunner) — 2026-09-04
 
 **P1**
-- [ ] M2 — 스키마 + pgvector + 임베딩 적재
-- [ ] M2 — 질문 10개로 검색 정확도 눈검증
-- [ ] M3 — Gemini 모델 ID 확정 (AI Studio 콘솔에서 직접 확인)
-- [ ] M3 — `/api/chat` (검색 → 프롬프트 → 생성 → 출처 반환)
+- [ ] M2 — 질문 10개로 검색 정확도 눈검증 — **`GEMINI_API_KEY` 발급 후 사용자가 직접 실행**: `docker compose up -d` → `./gradlew bootRun --args='--app.ingest.enabled=true'`, 콘솔에 찍히는 10문항 검색 결과(top-3·거리값)를 눈으로 확인
+- [ ] M3 — Gemini 모델 ID 확정 (AI Studio 콘솔에서 직접 확인) — 임베딩은 `gemini-embedding-001`로 확정됨(M2), 채팅 생성 모델만 남음
+- [ ] M3 — `/api/chat` (검색 → 프롬프트 → 생성 → 출처 반환) — `DocumentRepository.searchTopK()` 재사용
 
 **P2**
 - [ ] M4 — 도감 페이지 + 챗 UI

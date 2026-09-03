@@ -39,13 +39,16 @@ docker compose up -d
 
 # 3. 애플리케이션 실행
 ./gradlew bootRun
+
+# 4. (최초 1회) 데이터 적재 — DB에 포켓몬·마을·도장 저장 + Gemini 임베딩 + 검색 검증
+./gradlew bootRun --args='--app.ingest.enabled=true'
 ```
 
 Gemini API 키는 [Google AI Studio](https://aistudio.google.com/apikey)에서 무료로 발급받을 수 있습니다.
 
 ## 진행 상황
 
-설계 완료, 구현 착수 전입니다. 상세는 [`docs/STATUS.md`](docs/STATUS.md)를 참고하세요.
+M2(스키마·pgvector·임베딩 적재)까지 완료. 상세는 [`docs/STATUS.md`](docs/STATUS.md)를 참고하세요.
 
 ## 고지
 
