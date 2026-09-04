@@ -67,4 +67,15 @@ class ChatControllerTest {
                 .andExpect(status().isInternalServerError())
                 .andExpect(jsonPath("$.code").value("C001"));
     }
+
+    @Test
+    void chat_returns500WithGenericCodeWhenChatServiceThrowsUnexpectedException() throws Exception {
+        given(chatService.answer(anyString())).willThrow(new RuntimeException("DB 커넥션 실패"));
+
+        mockMvc.perform(post("/api/chat")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(new ChatRequest("피카츄는 무슨 타입이야?"))))
+                .andExpect(status().isInternalServerError())
+                .andExpect(jsonPath("$.code").value("C999"));
+    }
 }

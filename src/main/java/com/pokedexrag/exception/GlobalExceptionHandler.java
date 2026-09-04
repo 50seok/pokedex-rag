@@ -31,6 +31,14 @@ public class GlobalExceptionHandler {
                 .body(new ErrorResponse(LocalDateTime.now(), INVALID_REQUEST_CODE, message));
     }
 
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ErrorResponse> handleUnexpectedException(Exception e) {
+        // DB 커넥션 오류 등 CustomException으로 감싸지 않은 예외가 비표준 에러 응답으로 새어나가지 않도록 하는 최종 방어선
+        ErrorCode errorCode = ErrorCode.INTERNAL_ERROR;
+        return ResponseEntity.status(errorCode.httpStatus())
+                .body(new ErrorResponse(LocalDateTime.now(), errorCode.code(), errorCode.message()));
+    }
+
     private record ErrorResponse(LocalDateTime timestamp, String code, String message) {
     }
 }
