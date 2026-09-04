@@ -14,10 +14,17 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import java.time.LocalDateTime;
 
 /**
- * {@link ResponseEntityExceptionHandler}를 상속해 Spring MVC 표준 예외(405/415/400 등)는
+ * {@link ResponseEntityExceptionHandler}를 상속해 Spring MVC 표준 예외(400 등)는
  * 원래 상태코드를 그대로 유지하면서, 응답 바디만 {@code {timestamp,code,message}} 형식으로 통일한다.
  * {@code annotations = RestController.class}로 스코프를 한정해 {@code @Controller}(뷰 반환) 컨트롤러의
  * 예외는 가로채지 않고 Spring Boot 기본 /error 처리(HTML 에러 페이지)로 흘려보낸다.
+ *
+ * <p><b>예외</b>: 405(허용 안 된 HTTP 메서드) 등 핸들러 메서드가 아직 선택되지 않은 상태에서
+ * 발생하는 예외는 {@code annotations=} selector가 핸들러 타입(null)을 판별할 수 없어 이
+ * advice가 아예 적용되지 않는다({@link org.springframework.web.method.HandlerTypePredicate}
+ * 참고) — 이 경우 상태코드는 정확히 유지되지만 바디는 Spring Boot 기본 에러 포맷으로 나간다.
+ * 현재 REST 엔드포인트가 {@code POST /api/chat} 하나뿐이라(코드리뷰로 확인, 이슈 #13) 별도
+ * {@code HandlerExceptionResolver}를 추가하는 대응은 하지 않는다.
  */
 @RestControllerAdvice(annotations = RestController.class)
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
