@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>포켓몬 도감 - 관동 도감</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<nav th:replace="~{fragments/nav :: nav}"></nav>
+
+<main class="container">
+    <h1>포켓몬 도감</h1>
+    <div class="card-grid">
+        <a class="card" th:each="p : ${pokemons}" th:href="@{/pokemon/{id}(id=${p.id})}">
+            <img th:src="${p.spriteUrl}" th:alt="${p.nameKo}">
+            <p class="card-title" th:text="${p.nameKo}"></p>
+            <div class="type-chips">
+                <span class="type-chip" th:each="t : ${p.types}"
+                      th:text="${T(com.pokedexrag.util.TypeLabels).labelOf(t)}"></span>
+            </div>
+        </a>
+    </div>
+</main>
+</body>
+</html>

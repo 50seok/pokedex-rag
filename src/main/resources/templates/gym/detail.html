@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${gym.leaderKo} + ' - 관동 도감'"></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<nav th:replace="~{fragments/nav :: nav}"></nav>
+
+<main class="container detail">
+    <p class="card-subtitle" th:text="'제' + ${gym.order} + '체육관'"></p>
+    <h1 th:text="${gym.leaderKo}"></h1>
+    <span class="type-chip" th:text="${T(com.pokedexrag.util.TypeLabels).labelOf(gym.type)}"></span>
+    <p><strong>뱃지:</strong> <span th:text="${gym.badgeKo}"></span></p>
+    <p><strong>소속 마을:</strong>
+        <a th:href="@{/town/{id}(id=${town.id})}" th:text="${town.nameKo}"></a>
+    </p>
+    <p th:text="${gym.description}"></p>
+</main>
+</body>
+</html>

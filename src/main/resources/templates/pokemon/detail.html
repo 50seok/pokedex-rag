@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${pokemon.nameKo} + ' - 관동 도감'"></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<nav th:replace="~{fragments/nav :: nav}"></nav>
+
+<main class="container detail">
+    <img class="detail-sprite" th:src="${pokemon.spriteUrl}" th:alt="${pokemon.nameKo}">
+    <h1 th:text="${pokemon.nameKo}"></h1>
+    <p class="genus" th:text="${pokemon.genusKo}"></p>
+    <div class="type-chips">
+        <span class="type-chip" th:each="t : ${pokemon.types}"
+              th:text="${T(com.pokedexrag.util.TypeLabels).labelOf(t)}"></span>
+    </div>
+
+    <table class="stat-table">
+        <tbody>
+        <tr><th>HP</th><td th:text="${pokemon.hp}"></td></tr>
+        <tr><th>공격</th><td th:text="${pokemon.attack}"></td></tr>
+        <tr><th>방어</th><td th:text="${pokemon.defense}"></td></tr>
+        <tr><th>특수공격</th><td th:text="${pokemon.specialAttack}"></td></tr>
+        <tr><th>특수방어</th><td th:text="${pokemon.specialDefense}"></td></tr>
+        <tr><th>스피드</th><td th:text="${pokemon.speed}"></td></tr>
+        </tbody>
+    </table>
+
+    <p class="flavor-text" th:text="${pokemon.flavorTextKo}"></p>
+</main>
+</body>
+</html>

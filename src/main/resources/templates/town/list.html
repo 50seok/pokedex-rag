@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>마을 - 관동 도감</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<nav th:replace="~{fragments/nav :: nav}"></nav>
+
+<main class="container">
+    <h1>마을</h1>
+    <div class="card-grid">
+        <a class="card" th:each="t : ${towns}" th:href="@{/town/{id}(id=${t.id})}">
+            <p class="card-title" th:text="${t.nameKo}"></p>
+            <p class="card-subtitle" th:text="${t.nameEn}"></p>
+        </a>
+    </div>
+</main>
+</body>
+</html>
