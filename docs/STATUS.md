@@ -83,4 +83,4 @@
 | Render 15분 유휴 시 슬립 | 첫 접속 약 1분 대기 | 10분 간격 외부 핑 (월 744h < 750h 한도) |
 | Gemini `embedContent`가 `outputDimensionality` 요청을 무시할 수 있음 | 서버가 768 대신 3072차원 응답 → pgvector insert 실패 | `GeminiEmbeddingService`에서 항상 앞 768개로 클라이언트 잘라내기 적용 완료(해결됨) |
 | Gemini 무료 티어 입력 데이터 학습 사용 | 없음 (공개 정보만 다룸) | — |
-| Gemini API 키가 속한 프로젝트의 결제(prepay) 크레딧 소진 시 429 | 임베딩/채팅 호출 전체 실패 | AI Studio(https://ai.studio/projects)에서 프로젝트별 결제 상태 확인. 현재 trpg-gm과 키 공유 중이라 두 프로젝트 사용량이 합산됨 |
+| ~~Gemini API 키가 속한 프로젝트의 결제(prepay) 크레딧 소진 시 429~~ (해결됨) | ~~임베딩/채팅 호출 전체 실패~~ | trpg-gm과 처음 분리 발급한 키는 같은 GCP 프로젝트("Default Gemini Project") 소속이라 prepay 잔액을 공유해 429 발생 — RPM/TPM/RPD(Tier 1)는 여유 있었으나 프로젝트 단위 prepay 잔액이 0인 게 원인이었음. **별도 GCP 프로젝트를 새로 만들어 그 안에서 키를 재발급**해 완전히 분리, `generateContent`(채팅)·`embedContent`(임베딩) 둘 다 200 응답 확인 — 2026-09-04 |
