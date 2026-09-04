@@ -6,7 +6,7 @@ import com.pokedexrag.exception.CustomException;
 import com.pokedexrag.exception.ErrorCode;
 import com.pokedexrag.repository.DocumentRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestClientResponseException;
+import org.springframework.web.client.RestClientException;
 
 import java.util.List;
 
@@ -40,8 +40,9 @@ public class ChatService {
             String userPrompt = buildPrompt(question, results);
             String answer = geminiChatService.generate(SYSTEM_INSTRUCTION, userPrompt);
             return ChatResponse.of(answer, results);
-        } catch (IllegalStateException | RestClientResponseException e) {
-            // Gemini 429(무료 티어 한도 초과)·5xx·candidates 빈 응답 등을 사용자에게 일관된 에러로 변환
+        } catch (IllegalStateException | RestClientException e) {
+            // Gemini 429·5xx·타임아웃/커넥션 실패(ResourceAccessException)·candidates 빈 응답 등을
+            // 사용자에게 일관된 에러로 변환
             throw new CustomException(ErrorCode.CHAT_GENERATION_FAILED);
         }
     }

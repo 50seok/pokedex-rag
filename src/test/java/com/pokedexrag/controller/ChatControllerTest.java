@@ -18,6 +18,7 @@ import java.util.List;
 
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.BDDMockito.given;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -77,5 +78,12 @@ class ChatControllerTest {
                         .content(objectMapper.writeValueAsString(new ChatRequest("피카츄는 무슨 타입이야?"))))
                 .andExpect(status().isInternalServerError())
                 .andExpect(jsonPath("$.code").value("C999"));
+    }
+
+    @Test
+    void chat_returns405NotSwallowedByGenericHandlerWhenWrongHttpMethod() throws Exception {
+        mockMvc.perform(get("/api/chat"))
+                .andExpect(status().isMethodNotAllowed())
+                .andExpect(jsonPath("$.code").value("C000"));
     }
 }

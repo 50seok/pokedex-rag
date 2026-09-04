@@ -11,6 +11,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.ResourceAccessException;
 
 import java.util.List;
 
@@ -95,6 +96,21 @@ class ChatServiceTest {
         given(geminiChatService.generate(anyString(), anyString()))
                 .willThrow(HttpClientErrorException.create(HttpStatus.TOO_MANY_REQUESTS, "Too Many Requests",
                         null, null, null));
+
+        assertThatThrownBy(() -> chatService.answer("질문"))
+                .isInstanceOf(CustomException.class)
+                .satisfies(e -> assertThat(((CustomException) e).getErrorCode())
+                        .isEqualTo(ErrorCode.CHAT_GENERATION_FAILED));
+    }
+
+    @Test
+    void answer_throwsCustomExceptionWhenGeminiConnectionFails() {
+        chatService = new ChatService(embeddingService, documentRepository, geminiChatService);
+
+        given(embeddingService.embed(anyString())).willReturn(EMBEDDING);
+        given(documentRepository.searchTopK(any(float[].class), anyInt())).willReturn(List.of());
+        given(geminiChatService.generate(anyString(), anyString()))
+                .willThrow(new ResourceAccessException("connect timed out"));
 
         assertThatThrownBy(() -> chatService.answer("질문"))
                 .isInstanceOf(CustomException.class)
