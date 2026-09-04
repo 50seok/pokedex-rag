@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
@@ -15,8 +16,10 @@ import java.time.LocalDateTime;
 /**
  * {@link ResponseEntityExceptionHandler}를 상속해 Spring MVC 표준 예외(405/415/400 등)는
  * 원래 상태코드를 그대로 유지하면서, 응답 바디만 {@code {timestamp,code,message}} 형식으로 통일한다.
+ * {@code annotations = RestController.class}로 스코프를 한정해 {@code @Controller}(뷰 반환) 컨트롤러의
+ * 예외는 가로채지 않고 Spring Boot 기본 /error 처리(HTML 에러 페이지)로 흘려보낸다.
  */
-@RestControllerAdvice
+@RestControllerAdvice(annotations = RestController.class)
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     private static final String INVALID_REQUEST_CODE = "C000";
