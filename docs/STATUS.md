@@ -10,7 +10,7 @@
 | DB | Neon 무료 (PostgreSQL + pgvector) | 미설정 |
 | 로컬 DB | Docker Compose (`pgvector/pgvector:pg16`) | 검증 완료 (169건 적재+검색 확인, 2026-09-04) |
 | LLM·임베딩 | Google Gemini API 무료 티어 | 키 발급 완료 (`.env`) |
-| CI | [pr-gate](https://github.com/50seok/pokedex-rag/tree/dev/.github/workflows/pr-gate.yml) (자체 제작, Claude CLI로 diff P1~P3 리뷰) | 관찰 모드로 설치됨 — `dev` 베이스, auto-merge·required check 없음 |
+| CI | [pr-gate](https://github.com/50seok/pokedex-rag/tree/dev/.github/workflows/pr-gate.yml) (자체 제작, Claude CLI로 diff P1~P3 리뷰) | `dev` 베이스, auto-merge·required check(`review`) 켜짐 (2026-09-04) — P1 없으면 사람 손 없이 dev 머지 |
 
 > Spring Boot 버전 정정: PRD 작성 시점엔 3.x를 가정했으나 `start.spring.io` 기준 3.x가 지원 범위 밖으로 빠져 **4.1.1**로 진행함.
 >
