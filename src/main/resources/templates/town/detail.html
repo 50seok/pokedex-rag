@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${town.nameKo} + ' - 관동 도감'"></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<nav th:replace="~{fragments/nav :: nav}"></nav>
+
+<main class="container detail">
+    <h1 th:text="${town.nameKo}"></h1>
+    <p class="genus" th:text="${town.nameEn}"></p>
+    <p th:text="${town.description}"></p>
+
+    <h2>주요 장소</h2>
+    <ul>
+        <li th:each="place : ${town.notablePlaces}" th:text="${place}"></li>
+    </ul>
+</main>
+</body>
+</html>

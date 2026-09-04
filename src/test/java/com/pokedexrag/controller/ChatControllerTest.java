@@ -82,8 +82,11 @@ class ChatControllerTest {
 
     @Test
     void chat_returns405NotSwallowedByGenericHandlerWhenWrongHttpMethod() throws Exception {
+        // GlobalExceptionHandler가 annotations=RestController.class로 스코프 한정된 뒤로는(M4),
+        // 경로만 맞고 핸들러 메서드가 끝내 선택되지 않는 405 케이스는 어떤 advice의 빈 타입도
+        // 판별할 수 없어(handlerType=null) 우리 핸들러가 개입하지 못하고 Spring 기본 405 처리로
+        // 빠진다 - 핵심 검증 포인트는 여전히 "C999로 뭉개져 500이 되지 않는다"는 것이다.
         mockMvc.perform(get("/api/chat"))
-                .andExpect(status().isMethodNotAllowed())
-                .andExpect(jsonPath("$.code").value("C000"));
+                .andExpect(status().isMethodNotAllowed());
     }
 }

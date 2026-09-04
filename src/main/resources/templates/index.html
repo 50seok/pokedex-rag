@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>관동 도감</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<nav th:replace="~{fragments/nav :: nav}"></nav>
+
+<main class="container">
+    <h1>관동 도감 챗봇</h1>
+    <p>포켓몬, 마을, 도장에 대해 무엇이든 물어보세요.</p>
+
+    <form id="chat-form" class="chat-form">
+        <textarea id="question" placeholder="예: 피카츄는 무슨 타입이야?" rows="3" required></textarea>
+        <button type="submit" id="submit-btn">질문하기</button>
+    </form>
+
+    <section class="chat-result">
+        <p id="answer" class="answer"></p>
+        <div id="sources" class="sources"></div>
+    </section>
+</main>
+
+<script src="/js/chat.js"></script>
+</body>
+</html>
