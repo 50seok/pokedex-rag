@@ -1,6 +1,6 @@
 # STATUS — 관동 도감 (pokedex-rag)
 
-> 마지막 갱신: 2026-09-04 (PR #5 머지)
+> 마지막 갱신: 2026-09-04 (PR #8 머지)
 
 ## 인프라
 
@@ -17,6 +17,16 @@
 > 브랜치 모델: **M3부터 PR base는 `main`이 아니라 `dev`.** pr-gate가 `dev`로 향하는 PR만 리뷰하기 때문(원래 설계 유지 — main 자동 머지는 M5 배포에 영향을 주므로 제외). `dev`→`main` 승격은 사람이 직접 한다. M2(PR #3)는 이 규칙 적용 전이라 예외적으로 `main`에 바로 머지됨.
 
 ## 마지막 머지 PR
+
+[#8 — feat: M3-2 /api/chat 오케스트레이션](https://github.com/50seok/pokedex-rag/pull/8) (Closes #7) — 2026-09-04
+
+> pr-gate 리뷰 3라운드(#9, 매 라운드 병합 전 처리 후 머지):
+> 1차 P2 3건 — Gemini 429/5xx 미방어(`RestClientResponseException` catch 추가), `/api/chat` 질문 길이 제한 없음(`@Size(max=500)`), 검색 0건 테스트 누락
+> 2차 P2 1건 — `GlobalExceptionHandler`에 catch-all(`Exception.class`) 핸들러 부재로 DB 예외 등이 비표준 포맷으로 새어나감 → 추가
+> 3차 P2 1건 — 방금 추가한 catch-all이 `HttpRequestMethodNotSupportedException`(405) 등 Spring 표준 예외까지 500으로 덮어씀 → `GlobalExceptionHandler`가 `ResponseEntityExceptionHandler`를 상속해 `handleExceptionInternal`만 오버라이드하는 구조로 전환(표준 상태코드는 보존, 바디 포맷만 통일). `ChatService`의 catch 대상도 `RestClientException`(타임아웃 등 `ResourceAccessException` 포함)으로 넓힘
+> 최종 재검사: P1 0 · P2 0 · P3 0
+>
+> `exception`/`controller` 패키지를 이 PR에서 처음 만듦(springboot.md ErrorCode/CustomException/GlobalExceptionHandler 컨벤션 적용) — 앞으로 컨트롤러 추가 시 그대로 재사용.
 
 [#5 — feat: M3-1 GeminiChatService (generateContent 연동)](https://github.com/50seok/pokedex-rag/pull/5) (Closes #4) — 2026-09-04
 
@@ -48,7 +58,7 @@
 **P1**
 - [x] M3 — Gemini 모델 ID 확정 — 임베딩 `gemini-embedding-001`(M2), 채팅 `gemini.chat.model`(기본 `gemini-flash-lite-latest`, `GEMINI_CHAT_MODEL`로 override) — 2026-09-04
 - [x] M3-1 — `GeminiChatService` (generateContent 연동, candidates 빈 응답 방어, 타임아웃 설정) — 2026-09-04, PR #5
-- [ ] M3-2 — `/api/chat` 오케스트레이션 (검색 → 프롬프트 → 생성 → 출처 반환) + 컨트롤러/DTO/예외처리 — `DocumentRepository.searchTopK()`·`GeminiEmbeddingService`·`GeminiChatService` 재사용. **PR base는 `dev`**(위 브랜치 모델 참고)
+- [x] M3-2 — `/api/chat` 오케스트레이션 (검색 → 프롬프트 → 생성 → 출처 반환) + 컨트롤러/DTO/예외처리 — 2026-09-04, PR #8, **M3 완료**
 
 **P2**
 - [ ] M4 — 도감 페이지 + 챗 UI
