@@ -7,6 +7,7 @@ import org.springframework.test.web.client.MockRestServiceServer;
 import org.springframework.web.client.RestClient;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.content;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.header;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
@@ -37,6 +38,24 @@ class GeminiChatServiceTest {
         String result = service.generate("문서 기반으로만 답하라", "피카츄는 어디서 잡아?");
 
         assertThat(result).isEqualTo("관동 지방 숲에서 잡을 수 있습니다.");
+        server.verify();
+    }
+
+    @Test
+    void generate_throwsWhenCandidatesEmpty() {
+        RestClient.Builder builder = RestClient.builder();
+        MockRestServiceServer server = MockRestServiceServer.bindTo(builder).build();
+
+        String responseBody = """
+                {"candidates":[],"promptFeedback":{"blockReason":"SAFETY"}}""";
+
+        server.expect(requestTo(GENERATE_URL))
+                .andRespond(withSuccess(responseBody, MediaType.APPLICATION_JSON));
+
+        GeminiChatService service = new GeminiChatService(builder, "test-key", "test-model");
+
+        assertThatThrownBy(() -> service.generate("문서 기반으로만 답하라", "피카츄는 어디서 잡아?"))
+                .isInstanceOf(IllegalStateException.class);
         server.verify();
     }
 }

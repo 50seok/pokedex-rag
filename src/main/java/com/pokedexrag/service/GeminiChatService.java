@@ -40,6 +40,10 @@ public class GeminiChatService {
                 .retrieve()
                 .body(GenerateContentResponse.class);
 
+        if (response.candidates() == null || response.candidates().isEmpty()) {
+            // 안전 필터 차단 등으로 candidates가 비어 promptFeedback만 오는 경우
+            throw new IllegalStateException("Gemini 응답에 candidates가 없습니다 (안전 필터 차단 가능성)");
+        }
         return response.candidates().get(0).content().parts().get(0).text();
     }
 
