@@ -1,6 +1,7 @@
 package com.pokedexrag.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.pokedexrag.dto.ChatRequest;
 import com.pokedexrag.dto.ChatResponse;
 import com.pokedexrag.dto.SourceDto;
 import com.pokedexrag.exception.CustomException;
@@ -40,7 +41,7 @@ class ChatControllerTest {
 
         mockMvc.perform(post("/api/chat")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(new Request("피카츄는 무슨 타입이야?"))))
+                        .content(objectMapper.writeValueAsString(new ChatRequest("피카츄는 무슨 타입이야?"))))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.answer").value("전기 타입입니다."))
                 .andExpect(jsonPath("$.sources[0].type").value("pokemon"))
@@ -52,7 +53,7 @@ class ChatControllerTest {
     void chat_returns400WhenQuestionBlank() throws Exception {
         mockMvc.perform(post("/api/chat")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(new Request(""))))
+                        .content(objectMapper.writeValueAsString(new ChatRequest(""))))
                 .andExpect(status().isBadRequest());
     }
 
@@ -62,11 +63,8 @@ class ChatControllerTest {
 
         mockMvc.perform(post("/api/chat")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(new Request("피카츄는 무슨 타입이야?"))))
+                        .content(objectMapper.writeValueAsString(new ChatRequest("피카츄는 무슨 타입이야?"))))
                 .andExpect(status().isInternalServerError())
                 .andExpect(jsonPath("$.code").value("C001"));
-    }
-
-    private record Request(String question) {
     }
 }

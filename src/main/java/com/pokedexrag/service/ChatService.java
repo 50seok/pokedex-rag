@@ -6,6 +6,7 @@ import com.pokedexrag.exception.CustomException;
 import com.pokedexrag.exception.ErrorCode;
 import com.pokedexrag.repository.DocumentRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClientResponseException;
 
 import java.util.List;
 
@@ -33,19 +34,16 @@ public class ChatService {
     }
 
     public ChatResponse answer(String question) {
-        float[] queryEmbedding = embeddingService.embed(question);
-        List<DocumentSearchResult> results = documentRepository.searchTopK(queryEmbedding, TOP_K);
-
-        String userPrompt = buildPrompt(question, results);
-
-        String answer;
         try {
-            answer = geminiChatService.generate(SYSTEM_INSTRUCTION, userPrompt);
-        } catch (IllegalStateException e) {
+            float[] queryEmbedding = embeddingService.embed(question);
+            List<DocumentSearchResult> results = documentRepository.searchTopK(queryEmbedding, TOP_K);
+            String userPrompt = buildPrompt(question, results);
+            String answer = geminiChatService.generate(SYSTEM_INSTRUCTION, userPrompt);
+            return ChatResponse.of(answer, results);
+        } catch (IllegalStateException | RestClientResponseException e) {
+            // Gemini 429(무료 티어 한도 초과)·5xx·candidates 빈 응답 등을 사용자에게 일관된 에러로 변환
             throw new CustomException(ErrorCode.CHAT_GENERATION_FAILED);
         }
-
-        return ChatResponse.of(answer, results);
     }
 
     private String buildPrompt(String question, List<DocumentSearchResult> results) {

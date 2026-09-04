@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.client.HttpClientErrorException;
 
 import java.util.List;
 
@@ -17,6 +19,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
 
@@ -51,7 +54,21 @@ class ChatServiceTest {
         assertThat(response.sources().get(0).type()).isEqualTo("pokemon");
         assertThat(response.sources().get(0).id()).isEqualTo(25);
         assertThat(response.sources().get(0).title()).isEqualTo("피카츄");
-        verify(documentRepository).searchTopK(any(float[].class), anyInt());
+        verify(documentRepository).searchTopK(any(float[].class), eq(5));
+    }
+
+    @Test
+    void answer_returnsAnswerWithEmptySourcesWhenNoDocumentsFound() {
+        chatService = new ChatService(embeddingService, documentRepository, geminiChatService);
+
+        given(embeddingService.embed(anyString())).willReturn(EMBEDDING);
+        given(documentRepository.searchTopK(any(float[].class), anyInt())).willReturn(List.of());
+        given(geminiChatService.generate(anyString(), anyString())).willReturn("정보가 없습니다.");
+
+        ChatResponse response = chatService.answer("아무도 모르는 질문");
+
+        assertThat(response.answer()).isEqualTo("정보가 없습니다.");
+        assertThat(response.sources()).isEmpty();
     }
 
     @Test
@@ -62,6 +79,22 @@ class ChatServiceTest {
         given(documentRepository.searchTopK(any(float[].class), anyInt())).willReturn(List.of());
         given(geminiChatService.generate(anyString(), anyString()))
                 .willThrow(new IllegalStateException("safety block"));
+
+        assertThatThrownBy(() -> chatService.answer("질문"))
+                .isInstanceOf(CustomException.class)
+                .satisfies(e -> assertThat(((CustomException) e).getErrorCode())
+                        .isEqualTo(ErrorCode.CHAT_GENERATION_FAILED));
+    }
+
+    @Test
+    void answer_throwsCustomExceptionWhenGeminiReturnsErrorStatus() {
+        chatService = new ChatService(embeddingService, documentRepository, geminiChatService);
+
+        given(embeddingService.embed(anyString())).willReturn(EMBEDDING);
+        given(documentRepository.searchTopK(any(float[].class), anyInt())).willReturn(List.of());
+        given(geminiChatService.generate(anyString(), anyString()))
+                .willThrow(HttpClientErrorException.create(HttpStatus.TOO_MANY_REQUESTS, "Too Many Requests",
+                        null, null, null));
 
         assertThatThrownBy(() -> chatService.answer("질문"))
                 .isInstanceOf(CustomException.class)
