@@ -58,4 +58,22 @@ class GeminiChatServiceTest {
                 .isInstanceOf(IllegalStateException.class);
         server.verify();
     }
+
+    @Test
+    void generate_throwsWhenCandidateContentPartsEmpty() {
+        RestClient.Builder builder = RestClient.builder();
+        MockRestServiceServer server = MockRestServiceServer.bindTo(builder).build();
+
+        String responseBody = """
+                {"candidates":[{"finishReason":"SAFETY"}]}""";
+
+        server.expect(requestTo(GENERATE_URL))
+                .andRespond(withSuccess(responseBody, MediaType.APPLICATION_JSON));
+
+        GeminiChatService service = new GeminiChatService(builder, "test-key", "test-model");
+
+        assertThatThrownBy(() -> service.generate("문서 기반으로만 답하라", "피카츄는 어디서 잡아?"))
+                .isInstanceOf(IllegalStateException.class);
+        server.verify();
+    }
 }

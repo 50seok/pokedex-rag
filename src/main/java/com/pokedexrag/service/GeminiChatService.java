@@ -44,7 +44,12 @@ public class GeminiChatService {
             // 안전 필터 차단 등으로 candidates가 비어 promptFeedback만 오는 경우
             throw new IllegalStateException("Gemini 응답에 candidates가 없습니다 (안전 필터 차단 가능성)");
         }
-        return response.candidates().get(0).content().parts().get(0).text();
+        Content content = response.candidates().get(0).content();
+        if (content == null || content.parts() == null || content.parts().isEmpty()) {
+            // finishReason=SAFETY/RECITATION 등으로 candidate는 있으나 content가 비어있는 경우
+            throw new IllegalStateException("Gemini 응답에 candidate content가 없습니다 (부분 응답 차단 가능성)");
+        }
+        return content.parts().get(0).text();
     }
 
     private record GenerateContentRequest(SystemInstruction systemInstruction, List<Content> contents) {
