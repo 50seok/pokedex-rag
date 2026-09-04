@@ -1,6 +1,6 @@
 # STATUS — 관동 도감 (pokedex-rag)
 
-> 마지막 갱신: 2026-09-04 (PR #8 머지)
+> 마지막 갱신: 2026-09-04 (PR #14 머지)
 
 ## 인프라
 
@@ -17,6 +17,14 @@
 > 브랜치 모델: **M3부터 PR base는 `main`이 아니라 `dev`.** pr-gate가 `dev`로 향하는 PR만 리뷰하기 때문(원래 설계 유지 — main 자동 머지는 M5 배포에 영향을 주므로 제외). `dev`→`main` 승격은 사람이 직접 한다. M2(PR #3)는 이 규칙 적용 전이라 예외적으로 `main`에 바로 머지됨.
 
 ## 마지막 머지 PR
+
+[#12 — feat: M4 도감 페이지 + 챗 UI](https://github.com/50seok/pokedex-rag/pull/12) (Closes #11) + [#14 — 후속 주석 정정](https://github.com/50seok/pokedex-rag/pull/14) (Closes #13) — 2026-09-04
+
+> Thymeleaf + 바닐라 JS로 프론트 전체를 처음 구성(`templates`/`static`가 비어 있었음). `PokedexService`(Pokemon/Town/Gym 조회)는 REST용 `CustomException`/`ErrorCode`와 분리해 `ResponseStatusException`을 씀 — 뷰 컨트롤러의 404는 HTML 에러 페이지로, `/api/chat`의 에러는 JSON으로 갈리게 하기 위해서다. 이를 위해 `GlobalExceptionHandler`를 `@RestControllerAdvice(annotations = RestController.class)`로 스코프 한정.
+>
+> **부작용 발견·처리**: 스코프 한정 때문에 `GET /api/chat`처럼 핸들러 메서드가 아예 안 잡히는 405 케이스는 advice가 안 걸려 응답 바디가 표준 포맷을 벗어난다(상태코드는 정확). code-reviewer 독립 검증(Spring `HandlerTypePredicate` 소스 직접 확인) 결과 P3로 판단 — REST 엔드포인트가 `/api/chat` 하나뿐이라 별도 `HandlerExceptionResolver` 추가는 YAGNI. pr-gate는 같은 근본원인을 P2로 봤으나(#13) 별도 리졸버까지는 과하다고 판단해 클래스 주석만 정확히 갱신(PR #14)하는 선에서 종결.
+>
+> **auto-merge 첫 사용**: PR #10(사용자가 세션 밖에서 직접 설정)부터 `dev`에 required check+auto-merge가 켜져 P1 없으면 사람 개입 없이 자동 머지됨(`gh run watch`로 CI 완료만 기다림). 이 과정에서 **`dev` 베이스 PR은 "Closes #N"이 자동으로 이슈를 안 닫는다는 사실을 뒤늦게 발견**(기본 브랜치 `main`만 자동 동작) — 밀려 있던 #4·#7·#11·#13을 이번에 한꺼번에 수동으로 닫음. 앞으로 매 머지 후 `gh issue close` 수동 호출 필요.
 
 [#8 — feat: M3-2 /api/chat 오케스트레이션](https://github.com/50seok/pokedex-rag/pull/8) (Closes #7) — 2026-09-04
 
@@ -60,8 +68,10 @@
 - [x] M3-1 — `GeminiChatService` (generateContent 연동, candidates 빈 응답 방어, 타임아웃 설정) — 2026-09-04, PR #5
 - [x] M3-2 — `/api/chat` 오케스트레이션 (검색 → 프롬프트 → 생성 → 출처 반환) + 컨트롤러/DTO/예외처리 — 2026-09-04, PR #8, **M3 완료**
 
+**P1**
+- [x] M4 — 도감 페이지 + 챗 UI (Thymeleaf + 바닐라 JS, 포켓몬/마을/도장 목록·상세 + 챗 UI + 출처 칩 링크) — 2026-09-04, PR #12·#14, **M4 완료**
+
 **P2**
-- [ ] M4 — 도감 페이지 + 챗 UI
 - [ ] M5 — Docker · Render · Neon 배포
 - [ ] M5 — 슬립 방지 핑 구성
 
