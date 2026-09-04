@@ -1,6 +1,6 @@
 # STATUS — 관동 도감 (pokedex-rag)
 
-> 마지막 갱신: 2026-09-04
+> 마지막 갱신: 2026-09-04 (PR #5 머지)
 
 ## 인프라
 
@@ -17,6 +17,15 @@
 > 브랜치 모델: **M3부터 PR base는 `main`이 아니라 `dev`.** pr-gate가 `dev`로 향하는 PR만 리뷰하기 때문(원래 설계 유지 — main 자동 머지는 M5 배포에 영향을 주므로 제외). `dev`→`main` 승격은 사람이 직접 한다. M2(PR #3)는 이 규칙 적용 전이라 예외적으로 `main`에 바로 머지됨.
 
 ## 마지막 머지 PR
+
+[#5 — feat: M3-1 GeminiChatService (generateContent 연동)](https://github.com/50seok/pokedex-rag/pull/5) (Closes #4) — 2026-09-04
+
+> pr-gate 리뷰에서 P2 2건 지적(#6, 후속 커밋으로 같은 PR 안에서 처리 후 머지):
+> - candidates가 null/빈 리스트인 경우(안전 필터 차단) → `IllegalStateException`으로 명시적 처리
+> - candidate는 있으나 content/parts가 빈 경우(SAFETY/RECITATION 부분 차단) → 동일하게 명시적 처리
+> - RestClient에 connect/read 타임아웃 미설정 → `RestClientCustomizer` 빈(`config/RestClientTimeoutConfig`)으로 전역 적용(connect 5s/read 30s). 서비스 생성자에서 직접 설정하면 `MockRestServiceServer`가 걸어둔 mock requestFactory를 덮어써 테스트가 실제 네트워크를 타버리는 문제가 있어, Spring 컨텍스트로 빌드되는 프로덕션 빈에만 적용되도록 분리함.
+>
+> P3 1건(멀티파트 응답 시 첫 part만 사용)은 경미해 조치 없이 종료. `gemini.chat.model` 신규 환경변수 `GEMINI_CHAT_MODEL`(선택, 기본 `gemini-flash-lite-latest`) — `.env.example`에 반영.
 
 [#3 — feat: M2 스키마 + pgvector + 임베딩 적재](https://github.com/50seok/pokedex-rag/pull/3) (Closes #2) — 2026-09-04
 
@@ -37,8 +46,9 @@
 - [x] M2 — 질문 10개로 검색 정확도 눈검증 — 169건 적재 완료, 10문항 중 5개 top-1 정답 일치·나머지도 관련 카테고리 정상 검색(2개는 질문 자체가 관동 151종/지명 범위 밖이라 구조적으로 정답 불가) — 2026-09-04, **M2 완료**
 
 **P1**
-- [ ] M3 — Gemini 모델 ID 확정 (AI Studio 콘솔에서 직접 확인) — 임베딩은 `gemini-embedding-001`로 확정됨(M2), 채팅 생성 모델만 남음
-- [ ] M3 — `/api/chat` (검색 → 프롬프트 → 생성 → 출처 반환) — `DocumentRepository.searchTopK()`·`GeminiEmbeddingService` 재사용. **PR base는 `dev`**(위 브랜치 모델 참고)
+- [x] M3 — Gemini 모델 ID 확정 — 임베딩 `gemini-embedding-001`(M2), 채팅 `gemini.chat.model`(기본 `gemini-flash-lite-latest`, `GEMINI_CHAT_MODEL`로 override) — 2026-09-04
+- [x] M3-1 — `GeminiChatService` (generateContent 연동, candidates 빈 응답 방어, 타임아웃 설정) — 2026-09-04, PR #5
+- [ ] M3-2 — `/api/chat` 오케스트레이션 (검색 → 프롬프트 → 생성 → 출처 반환) + 컨트롤러/DTO/예외처리 — `DocumentRepository.searchTopK()`·`GeminiEmbeddingService`·`GeminiChatService` 재사용. **PR base는 `dev`**(위 브랜치 모델 참고)
 
 **P2**
 - [ ] M4 — 도감 페이지 + 챗 UI
