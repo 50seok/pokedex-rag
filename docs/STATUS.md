@@ -1,12 +1,12 @@
 # STATUS — 관동 도감 (pokedex-rag)
 
-> 마지막 갱신: 2026-09-05 (PR #18 머지)
+> 마지막 갱신: 2026-09-05 (Render 배포 완료)
 
 ## 인프라
 
 | 영역 | 선택 | 상태 |
 |---|---|---|
-| 앱 호스팅 | Render 무료 Web Service | 미설정 (Dockerfile 준비 완료) |
+| 앱 호스팅 | Render 무료 Web Service | **배포 완료** — https://pokedex-rag-9ri9.onrender.com (Ohio, Docker, main 브랜치 auto-deploy) |
 | DB | Neon 무료 (PostgreSQL + pgvector) | 프로비저닝 완료 — Flyway 마이그레이션 5건 + 169건 적재·검증 완료 (2026-09-05) |
 | 로컬 DB | Docker Compose (`pgvector/pgvector:pg16`) | 검증 완료 (169건 적재+검색 확인, 2026-09-04) |
 | LLM·임베딩 | Google Gemini API 무료 티어 | 키 발급 완료 (`.env`) |
@@ -23,6 +23,8 @@
 > 멀티스테이지 Dockerfile(eclipse-temurin:21-jdk 빌드 → 21-jre-alpine 런타임), non-root 유저, `-Xmx320m`(Render 512MB RAM 대응). `server.port=${PORT:8080}` 추가로 Render가 주입하는 PORT 환경변수를 그대로 받도록 함. 로컬 `docker build` + Neon 연결로 컨테이너 기동·페이지 조회·`/api/chat` 전부 정상 응답 확인 후 머지.
 >
 > **Neon 이관도 이 작업 전에 완료**: 로컬 `.env`를 잠깐 Neon 값으로 바꿔 `--app.ingest.enabled=true`로 직접 실행(로컬 Docker DB는 그대로 유지) — Flyway 마이그레이션 5건 적용 + 169건(포켓몬 151·마을 10·도장 8) 임베딩 적재, 검증 질의 10건 로컬 때와 동일하게 정상 동작 확인.
+
+> **Render 배포 트러블슈팅 (2026-09-05)**: Render MCP 플러그인(`render@claude-plugins-official`) 연결해 서비스 생성·환경변수 등록·배포 확인 진행. 이 시점에 `main`이 `dev`보다 16커밋 뒤처져 있어(M3~M5 미반영) 먼저 fast-forward 승격. 첫 빌드는 `./gradlew: Permission denied`로 실패 — Windows에서 커밋된 `gradlew`가 실행 비트 없이(100644) 저장돼 있었음(로컬 Docker Desktop 빌드에서는 안 드러남). git 파일모드 100755 변경 + Dockerfile `chmod +x` 이중 방어로 해결. `create_web_service` MCP 툴은 Docker/컨테이너 레지스트리 서비스를 지원 안 해서 서비스 생성만 대시보드로 수동 진행, 이후 환경변수 등록·배포 상태·로그 확인은 MCP로 처리.
 
 [#12 — feat: M4 도감 페이지 + 챗 UI](https://github.com/50seok/pokedex-rag/pull/12) (Closes #11) + [#14 — 후속 주석 정정](https://github.com/50seok/pokedex-rag/pull/14) (Closes #13) — 2026-09-04
 
@@ -80,7 +82,7 @@
 **P2**
 - [x] M5 — Neon DB 프로비저닝 + 데이터 이관 (169건) — 2026-09-05
 - [x] M5 — Dockerfile + 로컬 컨테이너 검증 (Neon 연결 포함) — 2026-09-05, PR #18
-- [ ] M5 — Render Web Service 배포
+- [x] M5 — Render Web Service 배포 — 2026-09-05, https://pokedex-rag-9ri9.onrender.com
 - [ ] M5 — 슬립 방지 핑 구성
 
 ## 알려진 이슈
