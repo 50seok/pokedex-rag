@@ -1,13 +1,13 @@
 # STATUS — 관동 도감 (pokedex-rag)
 
-> 마지막 갱신: 2026-09-04 (PR #14 머지)
+> 마지막 갱신: 2026-09-05 (PR #18 머지)
 
 ## 인프라
 
 | 영역 | 선택 | 상태 |
 |---|---|---|
-| 앱 호스팅 | Render 무료 Web Service | 미설정 |
-| DB | Neon 무료 (PostgreSQL + pgvector) | 미설정 |
+| 앱 호스팅 | Render 무료 Web Service | 미설정 (Dockerfile 준비 완료) |
+| DB | Neon 무료 (PostgreSQL + pgvector) | 프로비저닝 완료 — Flyway 마이그레이션 5건 + 169건 적재·검증 완료 (2026-09-05) |
 | 로컬 DB | Docker Compose (`pgvector/pgvector:pg16`) | 검증 완료 (169건 적재+검색 확인, 2026-09-04) |
 | LLM·임베딩 | Google Gemini API 무료 티어 | 키 발급 완료 (`.env`) |
 | CI | [pr-gate](https://github.com/50seok/pokedex-rag/tree/dev/.github/workflows/pr-gate.yml) (자체 제작, Claude CLI로 diff P1~P3 리뷰) | `dev` 베이스, auto-merge·required check(`review`) 켜짐 (2026-09-04) — P1 없으면 사람 손 없이 dev 머지 |
@@ -17,6 +17,12 @@
 > 브랜치 모델: **M3부터 PR base는 `main`이 아니라 `dev`.** pr-gate가 `dev`로 향하는 PR만 리뷰하기 때문(원래 설계 유지 — main 자동 머지는 M5 배포에 영향을 주므로 제외). `dev`→`main` 승격은 사람이 직접 한다. M2(PR #3)는 이 규칙 적용 전이라 예외적으로 `main`에 바로 머지됨.
 
 ## 마지막 머지 PR
+
+[#18 — feat: M5 Docker 이미지 + Render PORT 바인딩](https://github.com/50seok/pokedex-rag/pull/18) (Closes #17) — 2026-09-05
+
+> 멀티스테이지 Dockerfile(eclipse-temurin:21-jdk 빌드 → 21-jre-alpine 런타임), non-root 유저, `-Xmx320m`(Render 512MB RAM 대응). `server.port=${PORT:8080}` 추가로 Render가 주입하는 PORT 환경변수를 그대로 받도록 함. 로컬 `docker build` + Neon 연결로 컨테이너 기동·페이지 조회·`/api/chat` 전부 정상 응답 확인 후 머지.
+>
+> **Neon 이관도 이 작업 전에 완료**: 로컬 `.env`를 잠깐 Neon 값으로 바꿔 `--app.ingest.enabled=true`로 직접 실행(로컬 Docker DB는 그대로 유지) — Flyway 마이그레이션 5건 적용 + 169건(포켓몬 151·마을 10·도장 8) 임베딩 적재, 검증 질의 10건 로컬 때와 동일하게 정상 동작 확인.
 
 [#12 — feat: M4 도감 페이지 + 챗 UI](https://github.com/50seok/pokedex-rag/pull/12) (Closes #11) + [#14 — 후속 주석 정정](https://github.com/50seok/pokedex-rag/pull/14) (Closes #13) — 2026-09-04
 
@@ -72,7 +78,9 @@
 - [x] M4 — 도감 페이지 + 챗 UI (Thymeleaf + 바닐라 JS, 포켓몬/마을/도장 목록·상세 + 챗 UI + 출처 칩 링크) — 2026-09-04, PR #12·#14, **M4 완료**
 
 **P2**
-- [ ] M5 — Docker · Render · Neon 배포
+- [x] M5 — Neon DB 프로비저닝 + 데이터 이관 (169건) — 2026-09-05
+- [x] M5 — Dockerfile + 로컬 컨테이너 검증 (Neon 연결 포함) — 2026-09-05, PR #18
+- [ ] M5 — Render Web Service 배포
 - [ ] M5 — 슬립 방지 핑 구성
 
 ## 알려진 이슈
