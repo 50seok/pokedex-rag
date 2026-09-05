@@ -1,0 +1,15 @@
+.git
+.gradle
+build
+out
+.idea
+*.iml
+.vscode
+.env
+.env.*
+*.log
+logs
+data
+docs
+.claude
+neon-ingest.log
