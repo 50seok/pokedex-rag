@@ -37,7 +37,7 @@ class ChatControllerTest {
     @Test
     void chat_returns200WithBody() throws Exception {
         ChatResponse response = new ChatResponse("전기 타입입니다.",
-                List.of(new SourceDto("pokemon", 25, "피카츄")));
+                List.of(new SourceDto("pokemon", 25, "피카츄", "https://example.com/25.png")));
         given(chatService.answer(anyString())).willReturn(response);
 
         mockMvc.perform(post("/api/chat")
@@ -47,7 +47,8 @@ class ChatControllerTest {
                 .andExpect(jsonPath("$.answer").value("전기 타입입니다."))
                 .andExpect(jsonPath("$.sources[0].type").value("pokemon"))
                 .andExpect(jsonPath("$.sources[0].id").value(25))
-                .andExpect(jsonPath("$.sources[0].title").value("피카츄"));
+                .andExpect(jsonPath("$.sources[0].title").value("피카츄"))
+                .andExpect(jsonPath("$.sources[0].imageUrl").value("https://example.com/25.png"));
     }
 
     @Test

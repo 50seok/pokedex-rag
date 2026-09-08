@@ -7,6 +7,13 @@
 
     const SOURCE_PATH = {pokemon: '/pokemon/', town: '/town/', gym: '/gym/'};
 
+    questionInput.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) {
+            event.preventDefault();
+            form.requestSubmit();
+        }
+    });
+
     form.addEventListener('submit', function (event) {
         event.preventDefault();
         const question = questionInput.value.trim();
@@ -52,7 +59,14 @@
             const link = document.createElement('a');
             link.className = 'source-chip';
             link.href = (SOURCE_PATH[source.type] || '#') + source.id;
-            link.textContent = source.title;
+            if (source.imageUrl) {
+                const img = document.createElement('img');
+                img.className = 'source-chip-img';
+                img.src = source.imageUrl;
+                img.alt = '';
+                link.appendChild(img);
+            }
+            link.appendChild(document.createTextNode(source.title));
             sourcesEl.appendChild(link);
         });
     }
