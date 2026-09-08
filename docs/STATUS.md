@@ -1,6 +1,6 @@
 # STATUS — 관동 도감 (pokedex-rag)
 
-> 마지막 갱신: 2026-09-05 (Render 배포 완료)
+> 마지막 갱신: 2026-09-09 (챗 UI Enter 전송 + 포켓몬 이미지)
 
 ## 인프라
 
@@ -17,6 +17,10 @@
 > 브랜치 모델: **M3부터 PR base는 `main`이 아니라 `dev`.** pr-gate가 `dev`로 향하는 PR만 리뷰하기 때문(원래 설계 유지 — main 자동 머지는 M5 배포에 영향을 주므로 제외). `dev`→`main` 승격은 사람이 직접 한다. M2(PR #3)는 이 규칙 적용 전이라 예외적으로 `main`에 바로 머지됨.
 
 ## 마지막 머지 PR
+
+[#21 — feat: 챗 UI Enter 전송 + 포켓몬 소스 이미지 표시](https://github.com/50seok/pokedex-rag/pull/21) (Closes #20) — 2026-09-09
+
+> 챗 입력창(textarea)에서 Enter 키로 바로 전송(Shift+Enter는 줄바꿈 유지, IME 한글 조합 중 오전송 방지). 답변 출처(sources)에 포켓몬이 있으면 스프라이트 이미지도 표시 — `SourceDto.imageUrl` 신설, `ChatService`가 포켓몬 소스만 `PokemonRepository.findById`로 조회해 채움(마을·도장은 이미지 필드 자체가 없어 null 유지). 매핑 책임을 DTO 정적 팩토리에서 서비스로 옮김(DTO에 리포지토리 의존성을 넣지 않기 위함). code-reviewer 검수 P1 0 · P2 0 · P3 0, APPROVE.
 
 [#18 — feat: M5 Docker 이미지 + Render PORT 바인딩](https://github.com/50seok/pokedex-rag/pull/18) (Closes #17) — 2026-09-05
 
