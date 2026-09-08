@@ -7,6 +7,13 @@
 
     const SOURCE_PATH = {pokemon: '/pokemon/', town: '/town/', gym: '/gym/'};
 
+    questionInput.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) {
+            event.preventDefault();
+            form.requestSubmit();
+        }
+    });
+
     form.addEventListener('submit', function (event) {
         event.preventDefault();
         const question = questionInput.value.trim();
