@@ -2,9 +2,12 @@ package com.pokedexrag.service;
 
 import com.pokedexrag.dto.ChatResponse;
 import com.pokedexrag.dto.DocumentSearchResult;
+import com.pokedexrag.dto.SourceDto;
+import com.pokedexrag.entity.Pokemon;
 import com.pokedexrag.exception.CustomException;
 import com.pokedexrag.exception.ErrorCode;
 import com.pokedexrag.repository.DocumentRepository;
+import com.pokedexrag.repository.PokemonRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 
@@ -25,12 +28,14 @@ public class ChatService {
     private final GeminiEmbeddingService embeddingService;
     private final DocumentRepository documentRepository;
     private final GeminiChatService geminiChatService;
+    private final PokemonRepository pokemonRepository;
 
     public ChatService(GeminiEmbeddingService embeddingService, DocumentRepository documentRepository,
-                        GeminiChatService geminiChatService) {
+                        GeminiChatService geminiChatService, PokemonRepository pokemonRepository) {
         this.embeddingService = embeddingService;
         this.documentRepository = documentRepository;
         this.geminiChatService = geminiChatService;
+        this.pokemonRepository = pokemonRepository;
     }
 
     public ChatResponse answer(String question) {
@@ -39,12 +44,25 @@ public class ChatService {
             List<DocumentSearchResult> results = documentRepository.searchTopK(queryEmbedding, TOP_K);
             String userPrompt = buildPrompt(question, results);
             String answer = geminiChatService.generate(SYSTEM_INSTRUCTION, userPrompt);
-            return ChatResponse.of(answer, results);
+            return new ChatResponse(answer, buildSources(results));
         } catch (IllegalStateException | RestClientException e) {
             // Gemini 429·5xx·타임아웃/커넥션 실패(ResourceAccessException)·candidates 빈 응답 등을
             // 사용자에게 일관된 에러로 변환
             throw new CustomException(ErrorCode.CHAT_GENERATION_FAILED);
         }
+    }
+
+    private List<SourceDto> buildSources(List<DocumentSearchResult> results) {
+        return results.stream()
+                .map(r -> SourceDto.from(r, resolveImageUrl(r)))
+                .toList();
+    }
+
+    private String resolveImageUrl(DocumentSearchResult result) {
+        if (!"pokemon".equals(result.sourceType())) {
+            return null;
+        }
+        return pokemonRepository.findById(result.sourceId()).map(Pokemon::getSpriteUrl).orElse(null);
     }
 
     private String buildPrompt(String question, List<DocumentSearchResult> results) {
