@@ -29,20 +29,43 @@
     <h1 th:text="${pokemon.nameKo}"></h1>
     <p class="genus" th:text="${pokemon.genusKo}"></p>
     <div class="type-chips">
-        <span class="type-chip" th:each="t : ${pokemon.types}"
+        <span class="type-chip" th:each="t : ${pokemon.types}" th:class="'type-chip type-' + ${t}"
               th:text="${T(com.pokedexrag.util.TypeLabels).labelOf(t)}"></span>
     </div>
 
-    <table class="stat-table">
-        <tbody>
-        <tr><th>HP</th><td th:text="${pokemon.hp}"></td></tr>
-        <tr><th>공격</th><td th:text="${pokemon.attack}"></td></tr>
-        <tr><th>방어</th><td th:text="${pokemon.defense}"></td></tr>
-        <tr><th>특수공격</th><td th:text="${pokemon.specialAttack}"></td></tr>
-        <tr><th>특수방어</th><td th:text="${pokemon.specialDefense}"></td></tr>
-        <tr><th>스피드</th><td th:text="${pokemon.speed}"></td></tr>
-        </tbody>
-    </table>
+    <!-- ponytail: 막대 폭은 기준치 200(관동 151종 범위에서 충분한 상한) 대비 비율, 200 넘는 값은 100%로 클램프 -->
+    <div class="stat-rows">
+        <div class="stat-row">
+            <span class="stat-label">HP</span>
+            <div class="stat-bar-track"><div class="stat-bar-fill" th:class="'stat-bar-fill bar-' + ${pokemon.types[0]}" th:style="'width:' + (${pokemon.hp} >= 200 ? 100 : ${pokemon.hp} / 2) + '%'"></div></div>
+            <span class="stat-value" th:text="${pokemon.hp}"></span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">공격</span>
+            <div class="stat-bar-track"><div class="stat-bar-fill" th:class="'stat-bar-fill bar-' + ${pokemon.types[0]}" th:style="'width:' + (${pokemon.attack} >= 200 ? 100 : ${pokemon.attack} / 2) + '%'"></div></div>
+            <span class="stat-value" th:text="${pokemon.attack}"></span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">방어</span>
+            <div class="stat-bar-track"><div class="stat-bar-fill" th:class="'stat-bar-fill bar-' + ${pokemon.types[0]}" th:style="'width:' + (${pokemon.defense} >= 200 ? 100 : ${pokemon.defense} / 2) + '%'"></div></div>
+            <span class="stat-value" th:text="${pokemon.defense}"></span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">특수공격</span>
+            <div class="stat-bar-track"><div class="stat-bar-fill" th:class="'stat-bar-fill bar-' + ${pokemon.types[0]}" th:style="'width:' + (${pokemon.specialAttack} >= 200 ? 100 : ${pokemon.specialAttack} / 2) + '%'"></div></div>
+            <span class="stat-value" th:text="${pokemon.specialAttack}"></span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">특수방어</span>
+            <div class="stat-bar-track"><div class="stat-bar-fill" th:class="'stat-bar-fill bar-' + ${pokemon.types[0]}" th:style="'width:' + (${pokemon.specialDefense} >= 200 ? 100 : ${pokemon.specialDefense} / 2) + '%'"></div></div>
+            <span class="stat-value" th:text="${pokemon.specialDefense}"></span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">스피드</span>
+            <div class="stat-bar-track"><div class="stat-bar-fill" th:class="'stat-bar-fill bar-' + ${pokemon.types[0]}" th:style="'width:' + (${pokemon.speed} >= 200 ? 100 : ${pokemon.speed} / 2) + '%'"></div></div>
+            <span class="stat-value" th:text="${pokemon.speed}"></span>
+        </div>
+    </div>
 
     <p class="flavor-text" th:text="${pokemon.flavorTextKo}"></p>
 </main>
