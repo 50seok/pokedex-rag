@@ -10,6 +10,75 @@
 
 <main class="container">
     <h1>마을</h1>
+
+    <!-- ponytail: 관동(1세대) 10개 마을 좌표는 고정값이라 DB 컬럼 대신 마크업에 하드코딩. 세대 확장 시 town 테이블에 좌표 컬럼 추가로 전환 -->
+    <section class="kanto-map">
+        <svg viewBox="0 0 600 480" role="img" aria-label="관동 지방 마을 지도">
+            <rect x="10" y="10" width="580" height="460" rx="24" class="map-land"></rect>
+            <ellipse cx="160" cy="430" rx="90" ry="70" class="map-water"></ellipse>
+            <ellipse cx="360" cy="430" rx="70" ry="55" class="map-water"></ellipse>
+
+            <g class="map-routes">
+                <line x1="160" y1="340" x2="160" y2="190"></line>
+                <line x1="160" y1="190" x2="180" y2="80"></line>
+                <line x1="180" y1="80" x2="380" y2="70"></line>
+                <line x1="380" y1="70" x2="400" y2="230"></line>
+                <line x1="380" y1="70" x2="500" y2="210"></line>
+                <line x1="400" y1="230" x2="280" y2="230"></line>
+                <line x1="400" y1="230" x2="360" y2="340"></line>
+                <line x1="400" y1="230" x2="500" y2="210"></line>
+                <line x1="360" y1="340" x2="360" y2="430"></line>
+                <line x1="160" y1="340" x2="160" y2="430"></line>
+                <line x1="160" y1="430" x2="360" y2="430"></line>
+            </g>
+
+            <a th:href="@{/town/1}" class="kanto-map-node map-node-plain"><title>태초마을</title>
+                <circle cx="160" cy="340" r="12"></circle>
+                <text x="160" y="368" text-anchor="middle">태초마을</text>
+            </a>
+            <a th:href="@{/town/2}" class="kanto-map-node map-node-gym"><title>상록시티</title>
+                <circle cx="160" cy="190" r="12"></circle>
+                <text x="160" y="218" text-anchor="middle">상록시티</text>
+            </a>
+            <a th:href="@{/town/3}" class="kanto-map-node map-node-gym"><title>회색시티</title>
+                <circle cx="180" cy="80" r="12"></circle>
+                <text x="180" y="108" text-anchor="middle">회색시티</text>
+            </a>
+            <a th:href="@{/town/4}" class="kanto-map-node map-node-gym"><title>블루시티</title>
+                <circle cx="380" cy="70" r="12"></circle>
+                <text x="380" y="98" text-anchor="middle">블루시티</text>
+            </a>
+            <a th:href="@{/town/5}" class="kanto-map-node map-node-plain"><title>보라타운</title>
+                <circle cx="500" cy="210" r="12"></circle>
+                <text x="500" y="238" text-anchor="middle">보라타운</text>
+            </a>
+            <a th:href="@{/town/6}" class="kanto-map-node map-node-gym"><title>갈색시티</title>
+                <circle cx="360" cy="340" r="12"></circle>
+                <text x="360" y="368" text-anchor="middle">갈색시티</text>
+            </a>
+            <a th:href="@{/town/7}" class="kanto-map-node map-node-gym"><title>무지개시티</title>
+                <circle cx="280" cy="230" r="12"></circle>
+                <text x="280" y="258" text-anchor="middle">무지개시티</text>
+            </a>
+            <a th:href="@{/town/8}" class="kanto-map-node map-node-gym"><title>연분홍시티</title>
+                <circle cx="360" cy="430" r="12"></circle>
+                <text x="360" y="458" text-anchor="middle">연분홍시티</text>
+            </a>
+            <a th:href="@{/town/9}" class="kanto-map-node map-node-gym"><title>노랑시티</title>
+                <circle cx="400" cy="230" r="12"></circle>
+                <text x="400" y="258" text-anchor="middle">노랑시티</text>
+            </a>
+            <a th:href="@{/town/10}" class="kanto-map-node map-node-gym"><title>홍련섬</title>
+                <circle cx="160" cy="430" r="12"></circle>
+                <text x="160" y="458" text-anchor="middle">홍련섬</text>
+            </a>
+        </svg>
+        <div class="kanto-map-legend">
+            <span><i class="legend-gym"></i>체육관 마을</span>
+            <span><i class="legend-plain"></i>체육관 없음</span>
+        </div>
+    </section>
+
     <div class="card-grid">
         <a class="card" th:each="t : ${towns}" th:href="@{/town/{id}(id=${t.id})}">
             <p class="card-title" th:text="${t.nameKo}"></p>
