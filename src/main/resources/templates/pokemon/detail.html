@@ -9,7 +9,17 @@
 <nav th:replace="~{fragments/nav :: nav}"></nav>
 
 <main class="container detail">
-    <img class="detail-sprite" th:src="${pokemon.spriteUrl}" th:alt="${pokemon.nameKo}">
+    <div class="detail-sprites">
+        <img class="detail-sprite" th:src="${pokemon.spriteUrl}" th:alt="${pokemon.nameKo}">
+        <img class="detail-sprite-animated"
+             th:src="${'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/' + pokemon.id + '.gif'}"
+             th:alt="${pokemon.nameKo} + ' 움직이는 모습'" loading="lazy">
+    </div>
+    <button type="button" id="cry-btn" class="cry-btn"
+            th:attr="data-cry-url=${'https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/' + pokemon.id + '.ogg'}">
+        🔊 울음소리 듣기
+    </button>
+    <audio id="cry-audio" preload="none"></audio>
     <h1 th:text="${pokemon.nameKo}"></h1>
     <p class="genus" th:text="${pokemon.genusKo}"></p>
     <div class="type-chips">
@@ -30,5 +40,13 @@
 
     <p class="flavor-text" th:text="${pokemon.flavorTextKo}"></p>
 </main>
+
+<script>
+    document.getElementById('cry-btn').addEventListener('click', function () {
+        var audio = document.getElementById('cry-audio');
+        audio.src = this.dataset.cryUrl;
+        audio.play();
+    });
+</script>
 </body>
 </html>
