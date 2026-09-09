@@ -14,7 +14,7 @@
         <a class="card" th:each="g : ${gyms}" th:href="@{/gym/{id}(id=${g.id})}">
             <p class="card-subtitle" th:text="'제' + ${g.order} + '체육관'"></p>
             <p class="card-title" th:text="${g.leaderKo}"></p>
-            <span class="type-chip" th:text="${T(com.pokedexrag.util.TypeLabels).labelOf(g.type)}"></span>
+            <span class="type-chip" th:class="'type-chip type-' + ${g.type}" th:text="${T(com.pokedexrag.util.TypeLabels).labelOf(g.type)}"></span>
         </a>
     </div>
 </main>

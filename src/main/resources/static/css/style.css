@@ -2,6 +2,12 @@
     box-sizing: border-box;
 }
 
+:root {
+    --accent: #d6483f;
+    --accent-hover: #b93a32;
+    --accent-tint: #fbe8e6;
+}
+
 body {
     margin: 0;
     font-family: -apple-system, "Malgun Gothic", "Segoe UI", sans-serif;
@@ -190,7 +196,48 @@ h1 {
     border-radius: 999px;
     padding: 0.15rem 0.7rem;
     font-size: 0.8rem;
+    font-weight: 600;
 }
+
+/* 타입별 색상 (커뮤니티 통용 컬러, 특정 저작물 색상 지정이 아닌 일반 관례) */
+.type-normal { background: #F1EFE8; color: #6b6a5f; }
+.type-fire { background: #FDE7DE; color: #9c3b12; }
+.type-water { background: #E1EEFB; color: #1f4e8c; }
+.type-electric { background: #FDF3CF; color: #7a5e05; }
+.type-grass { background: #E4F3DC; color: #2f5c1a; }
+.type-ice { background: #DEF3F3; color: #1f6363; }
+.type-fighting { background: #F3E2DD; color: #7a3319; }
+.type-poison { background: #EFE4F7; color: #5c2d80; }
+.type-ground { background: #F1E6D2; color: #6b4a1f; }
+.type-flying { background: #E9EEFC; color: #3d5a99; }
+.type-psychic { background: #FCE4EF; color: #99235f; }
+.type-bug { background: #EEF3D8; color: #56621a; }
+.type-rock { background: #EFE9DB; color: #5c4f36; }
+.type-ghost { background: #E7E2F3; color: #453a72; }
+.type-dragon { background: #E3E0FB; color: #3a2e8c; }
+.type-dark { background: #E4E2DF; color: #34302c; }
+.type-steel { background: #E6EBEF; color: #46586b; }
+.type-fairy { background: #FCE3EF; color: #99336b; }
+
+/* 타입별 스탯 바 색상 (진한 톤) */
+.bar-normal { background: #A8A878; }
+.bar-fire { background: #F08030; }
+.bar-water { background: #6890F0; }
+.bar-electric { background: #F8D030; }
+.bar-grass { background: #78C850; }
+.bar-ice { background: #98D8D8; }
+.bar-fighting { background: #C03028; }
+.bar-poison { background: #A040A0; }
+.bar-ground { background: #E0C068; }
+.bar-flying { background: #A890F0; }
+.bar-psychic { background: #F85888; }
+.bar-bug { background: #A8B820; }
+.bar-rock { background: #B8A038; }
+.bar-ghost { background: #705898; }
+.bar-dragon { background: #7038F8; }
+.bar-dark { background: #705848; }
+.bar-steel { background: #B8B8D0; }
+.bar-fairy { background: #EE99AC; }
 
 /* 상세 페이지 */
 .detail {
@@ -240,6 +287,12 @@ h1 {
 
 .detail-nav-btn-next {
     margin-left: auto;
+    background: var(--accent-tint);
+    color: var(--accent-hover);
+}
+
+.detail-nav-btn-next:hover {
+    background: #f6d3d0;
 }
 
 .cry-btn {
@@ -247,10 +300,14 @@ h1 {
     padding: 0.4rem 1rem;
     border: none;
     border-radius: 8px;
-    background: #2b3a55;
+    background: var(--accent);
     color: #fff;
     font-size: 0.9rem;
     cursor: pointer;
+}
+
+.cry-btn:hover {
+    background: var(--accent-hover);
 }
 
 .genus {
@@ -258,15 +315,44 @@ h1 {
     margin-top: -0.5rem;
 }
 
-.stat-table {
-    border-collapse: collapse;
+.stat-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
     margin: 1rem 0;
+    max-width: 360px;
 }
 
-.stat-table th, .stat-table td {
-    border: 1px solid #e0e0e0;
-    padding: 0.4rem 0.9rem;
-    text-align: left;
+.stat-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat-label {
+    width: 60px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.stat-bar-track {
+    flex: 1;
+    height: 10px;
+    background: #eef1f6;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.stat-bar-fill {
+    height: 100%;
+    border-radius: 5px;
+}
+
+.stat-value {
+    width: 32px;
+    text-align: right;
+    font-size: 0.85rem;
+    font-weight: 600;
 }
 
 .flavor-text {
@@ -295,10 +381,14 @@ h1 {
     padding: 0.5rem 1.4rem;
     border: none;
     border-radius: 8px;
-    background: #2b3a55;
+    background: var(--accent);
     color: #fff;
     font-size: 1rem;
     cursor: pointer;
+}
+
+.chat-form button:hover:not(:disabled) {
+    background: var(--accent-hover);
 }
 
 .chat-form button:disabled {
@@ -306,9 +396,24 @@ h1 {
     cursor: not-allowed;
 }
 
+.accent-dot {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-right: 8px;
+    vertical-align: 2px;
+}
+
 .chat-result {
     margin-top: 1.5rem;
     max-width: 600px;
+    background: #f3f6f2;
+    border: 3px solid #d8dde3;
+    border-radius: 14px;
+    padding: 1.25rem;
+    min-height: 60px;
 }
 
 .answer {
