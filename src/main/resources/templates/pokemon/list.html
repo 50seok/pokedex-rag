@@ -13,6 +13,7 @@
     <div class="card-grid">
         <a class="card" th:each="p : ${pokemons}" th:href="@{/pokemon/{id}(id=${p.id})}">
             <img th:src="${p.spriteUrl}" th:alt="${p.nameKo}">
+            <span class="dex-no" th:text="'#' + ${#numbers.formatInteger(p.id, 3)}"></span>
             <p class="card-title" th:text="${p.nameKo}"></p>
             <div class="type-chips">
                 <span class="type-chip" th:each="t : ${p.types}"
