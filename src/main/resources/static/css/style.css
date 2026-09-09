@@ -151,6 +151,18 @@ h1 {
     object-fit: contain;
 }
 
+.dex-no {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #999;
+}
+
+.dex-no-detail {
+    font-size: 1rem;
+    color: #666;
+}
+
 .card-title {
     font-weight: 600;
     margin: 0.4rem 0 0.2rem;
@@ -206,6 +218,28 @@ h1 {
     object-fit: contain;
     display: block;
     image-rendering: pixelated;
+}
+
+.detail-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.detail-nav-btn {
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    background: #eef1f6;
+    color: #2b3a55;
+    font-size: 0.9rem;
+}
+
+.detail-nav-btn:hover {
+    background: #dde3ee;
+}
+
+.detail-nav-btn-next {
+    margin-left: auto;
 }
 
 .cry-btn {

@@ -9,6 +9,11 @@
 <nav th:replace="~{fragments/nav :: nav}"></nav>
 
 <main class="container detail">
+    <!-- ponytail: 관동(1세대) 151종 고정 스코프라 마지막 번호를 하드코딩. 세대 확장 시 전체 개수 조회로 전환 -->
+    <div class="detail-nav">
+        <a th:if="${pokemon.id > 1}" th:href="@{/pokemon/{id}(id=${pokemon.id - 1})}" class="detail-nav-btn">◀ 이전</a>
+        <a th:if="${pokemon.id < 151}" th:href="@{/pokemon/{id}(id=${pokemon.id + 1})}" class="detail-nav-btn detail-nav-btn-next">다음 ▶</a>
+    </div>
     <div class="detail-sprites">
         <img class="detail-sprite" th:src="${pokemon.spriteUrl}" th:alt="${pokemon.nameKo}">
         <img class="detail-sprite-animated"
@@ -20,6 +25,7 @@
         🔊 울음소리 듣기
     </button>
     <audio id="cry-audio" preload="none"></audio>
+    <span class="dex-no dex-no-detail" th:text="'#' + ${#numbers.formatInteger(pokemon.id, 3)}"></span>
     <h1 th:text="${pokemon.nameKo}"></h1>
     <p class="genus" th:text="${pokemon.genusKo}"></p>
     <div class="type-chips">
@@ -45,6 +51,7 @@
     document.getElementById('cry-btn').addEventListener('click', function () {
         var audio = document.getElementById('cry-audio');
         audio.src = this.dataset.cryUrl;
+        audio.volume = 0.5;
         audio.play();
     });
 </script>
