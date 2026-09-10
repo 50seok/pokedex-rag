@@ -56,10 +56,28 @@ public class Pokemon {
     @Column(name = "flavor_text_ko", nullable = false)
     private String flavorTextKo;
 
+    @Column(name = "evolves_from_id")
+    private Integer evolvesFromId;
+
+    @JdbcTypeCode(SqlTypes.ARRAY)
+    @Column(name = "evolves_to")
+    private List<String> evolvesTo;
+
+    @JdbcTypeCode(SqlTypes.ARRAY)
+    @Column
+    private List<String> abilities;
+
+    @Column(name = "habitat_ko")
+    private String habitatKo;
+
+    @Column(name = "color_ko")
+    private String colorKo;
+
     @Builder
     public Pokemon(Integer id, String nameKo, String genusKo, List<String> types, Integer hp, Integer attack,
                    Integer defense, Integer specialAttack, Integer specialDefense, Integer speed,
-                   String spriteUrl, String flavorTextKo) {
+                   String spriteUrl, String flavorTextKo, Integer evolvesFromId, List<String> evolvesTo,
+                   List<String> abilities, String habitatKo, String colorKo) {
         this.id = id;
         this.nameKo = nameKo;
         this.genusKo = genusKo;
@@ -72,5 +90,10 @@ public class Pokemon {
         this.speed = speed;
         this.spriteUrl = spriteUrl;
         this.flavorTextKo = flavorTextKo;
+        this.evolvesFromId = evolvesFromId;
+        this.evolvesTo = evolvesTo;
+        this.abilities = abilities;
+        this.habitatKo = habitatKo;
+        this.colorKo = colorKo;
     }
 }

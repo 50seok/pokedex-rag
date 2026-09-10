@@ -20,6 +20,8 @@ import org.springframework.stereotype.Component;
 
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * data/*.json (포켓몬 151·마을 10·도장 8)을 DB에 적재하고, 각 문서를 Gemini로 임베딩해
@@ -80,8 +82,11 @@ public class DataIngestRunner implements ApplicationRunner {
         int total = pokemons.size() + towns.size() + gyms.size();
         int done = 0;
 
+        Map<Integer, String> nameById = pokemons.stream()
+                .collect(Collectors.toMap(PokemonJson::id, PokemonJson::nameKo));
         for (PokemonJson p : pokemons) {
-            ingest("pokemon", p.id(), DocumentTextBuilder.pokemonTitle(p), DocumentTextBuilder.pokemonContent(p));
+            ingest("pokemon", p.id(), DocumentTextBuilder.pokemonTitle(p),
+                    DocumentTextBuilder.pokemonContent(p, nameById));
             done++;
             System.out.println("임베딩 적재: %d/%d".formatted(done, total));
         }
@@ -131,6 +136,11 @@ public class DataIngestRunner implements ApplicationRunner {
                 .speed(p.stats().speed())
                 .spriteUrl(p.spriteUrl())
                 .flavorTextKo(p.flavorTextKo())
+                .evolvesFromId(p.evolvesFromId())
+                .evolvesTo(p.evolvesTo())
+                .abilities(p.abilities())
+                .habitatKo(p.habitatKo())
+                .colorKo(p.colorKo())
                 .build();
     }
 

@@ -23,7 +23,9 @@ public class PokemonController {
 
     @GetMapping("/pokemon/{id}")
     public String detail(@PathVariable int id, Model model) {
-        model.addAttribute("pokemon", pokedexService.findPokemon(id));
+        PokedexService.PokemonDetail detail = pokedexService.findPokemonDetail(id);
+        model.addAttribute("pokemon", detail.pokemon());
+        model.addAttribute("evolution", detail);
         return "pokemon/detail";
     }
 }
