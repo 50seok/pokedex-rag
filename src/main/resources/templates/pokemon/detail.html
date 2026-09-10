@@ -33,12 +33,13 @@
               th:text="${T(com.pokedexrag.util.TypeLabels).labelOf(t)}"></span>
     </div>
 
-    <div class="weakness-row" th:with="weaknesses=${T(com.pokedexrag.util.TypeEffectiveness).weaknessesOf(pokemon.types)}"
-         th:if="${not #lists.isEmpty(weaknesses)}">
-        <span class="weakness-label">약점</span>
-        <span class="type-chip" th:each="w : ${weaknesses}" th:class="'type-chip type-' + ${w}"
-              th:text="${T(com.pokedexrag.util.TypeLabels).labelOf(w)}"></span>
-    </div>
+    <th:block th:with="weaknesses=${T(com.pokedexrag.util.TypeEffectiveness).weaknessesOf(pokemon.types)}">
+        <div class="weakness-row" th:if="${not #lists.isEmpty(weaknesses)}">
+            <span class="weakness-label">약점</span>
+            <span class="type-chip" th:each="w : ${weaknesses}" th:class="'type-chip type-' + ${w}"
+                  th:text="${T(com.pokedexrag.util.TypeLabels).labelOf(w)}"></span>
+        </div>
+    </th:block>
 
     <dl class="info-list"
         th:if="${(pokemon.abilities != null and not #lists.isEmpty(pokemon.abilities)) or pokemon.habitatKo != null or pokemon.colorKo != null}">
