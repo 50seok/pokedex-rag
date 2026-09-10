@@ -1,6 +1,6 @@
 # STATUS — 관동 도감 (pokedex-rag)
 
-> 마지막 갱신: 2026-09-10 (진화체인+특성+서식지/색상+타입약점 추가)
+> 마지막 갱신: 2026-09-10 (main 배포 승격 + Neon 운영 DB 백필 완료)
 
 ## 인프라
 
@@ -17,6 +17,8 @@
 > 브랜치 모델: **M3부터 PR base는 `main`이 아니라 `dev`.** pr-gate가 `dev`로 향하는 PR만 리뷰하기 때문(원래 설계 유지 — main 자동 머지는 M5 배포에 영향을 주므로 제외). `dev`→`main` 승격은 사람이 직접 한다. M2(PR #3)는 이 규칙 적용 전이라 예외적으로 `main`에 바로 머지됨.
 
 ## 마지막 머지 PR
+
+**2026-09-10 — dev→main 승격 + Neon 운영 DB 백필**: PR #21~#35 전체(챗 Enter/이미지·관동지도·울음소리·도감번호·UI톤 리뉴얼·진화체인/특성/서식지/색상/타입약점)를 `main`에 fast-forward 승격 → Render 자동 배포 완료. Neon MCP(user scope, OAuth) 신규 연결해서 접속정보 확보 → 로컬에서 `.env`를 잠깐 Neon 값으로 바꿔 `--app.ingest.enabled=true` 재실행으로 운영 DB 151종 백필 + 169건 재임베딩 완료, 작업 후 로컬 값으로 원복. 실제 서비스(https://pokedex-rag-9ri9.onrender.com)에서 이상해씨(#1) 전체 기능(진화·특성·서식지·색상·약점·스탯바·움짤·울음소리) 확인 완료.
 
 [#32 — feat: 포켓몬 상세에 진화체인·특성·서식지/색상·타입 약점 추가](https://github.com/50seok/pokedex-rag/pull/32) + [#35 — chore: pokemon.json 재수집본 반영](https://github.com/50seok/pokedex-rag/pull/35) (Closes #31, #34) — 2026-09-10
 
