@@ -58,6 +58,33 @@ public class PokedexService {
         return new GymDetail(gym, town);
     }
 
+    public PokemonDetail findPokemonDetail(int id) {
+        Pokemon pokemon = findPokemon(id);
+
+        String evolvesFromName = pokemon.getEvolvesFromId() != null
+                ? findPokemon(pokemon.getEvolvesFromId()).getNameKo()
+                : null;
+
+        List<EvolutionTarget> evolvesTo = pokemon.getEvolvesTo() == null
+                ? List.of()
+                : pokemon.getEvolvesTo().stream().map(this::toEvolutionTarget).toList();
+
+        return new PokemonDetail(pokemon, evolvesFromName, evolvesTo);
+    }
+
+    private EvolutionTarget toEvolutionTarget(String raw) {
+        String[] split = raw.split(":", 2);
+        int targetId = Integer.parseInt(split[0]);
+        String condition = split.length > 1 ? split[1] : "";
+        return new EvolutionTarget(targetId, findPokemon(targetId).getNameKo(), condition);
+    }
+
     public record GymDetail(Gym gym, Town town) {
+    }
+
+    public record PokemonDetail(Pokemon pokemon, String evolvesFromName, List<EvolutionTarget> evolvesTo) {
+    }
+
+    public record EvolutionTarget(int id, String nameKo, String condition) {
     }
 }

@@ -40,17 +40,19 @@ class PokemonControllerTest {
     @Test
     void detail_returns200WithPokemon() throws Exception {
         Pokemon pikachu = pikachu();
-        given(pokedexService.findPokemon(25)).willReturn(pikachu);
+        PokedexService.PokemonDetail detail = new PokedexService.PokemonDetail(pikachu, null, List.of());
+        given(pokedexService.findPokemonDetail(25)).willReturn(detail);
 
         mockMvc.perform(get("/pokemon/25"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("pokemon/detail"))
-                .andExpect(model().attribute("pokemon", pikachu));
+                .andExpect(model().attribute("pokemon", pikachu))
+                .andExpect(model().attribute("evolution", detail));
     }
 
     @Test
     void detail_returns404WhenNotFoundAndNotSwallowedByGlobalHandler() throws Exception {
-        given(pokedexService.findPokemon(9999))
+        given(pokedexService.findPokemonDetail(9999))
                 .willThrow(new ResponseStatusException(HttpStatus.NOT_FOUND, "포켓몬을 찾을 수 없습니다"));
 
         mockMvc.perform(get("/pokemon/9999"))

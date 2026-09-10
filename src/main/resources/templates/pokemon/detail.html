@@ -33,6 +33,40 @@
               th:text="${T(com.pokedexrag.util.TypeLabels).labelOf(t)}"></span>
     </div>
 
+    <div class="weakness-row" th:with="weaknesses=${T(com.pokedexrag.util.TypeEffectiveness).weaknessesOf(pokemon.types)}"
+         th:if="${not #lists.isEmpty(weaknesses)}">
+        <span class="weakness-label">약점</span>
+        <span class="type-chip" th:each="w : ${weaknesses}" th:class="'type-chip type-' + ${w}"
+              th:text="${T(com.pokedexrag.util.TypeLabels).labelOf(w)}"></span>
+    </div>
+
+    <dl class="info-list"
+        th:if="${(pokemon.abilities != null and not #lists.isEmpty(pokemon.abilities)) or pokemon.habitatKo != null or pokemon.colorKo != null}">
+        <th:block th:if="${pokemon.abilities != null and not #lists.isEmpty(pokemon.abilities)}">
+            <dt>특성</dt>
+            <dd th:text="${#strings.listJoin(pokemon.abilities, ', ')}"></dd>
+        </th:block>
+        <th:block th:if="${pokemon.habitatKo != null}">
+            <dt>서식지</dt>
+            <dd th:text="${pokemon.habitatKo}"></dd>
+        </th:block>
+        <th:block th:if="${pokemon.colorKo != null}">
+            <dt>색상</dt>
+            <dd th:text="${pokemon.colorKo}"></dd>
+        </th:block>
+    </dl>
+
+    <div class="evolution-row" th:if="${evolution.evolvesFromName != null or not #lists.isEmpty(evolution.evolvesTo)}">
+        <h2 class="section-title">진화</h2>
+        <div class="evolution-chips">
+            <a th:if="${evolution.evolvesFromName != null}" class="evolution-chip"
+               th:href="@{/pokemon/{id}(id=${pokemon.evolvesFromId})}" th:text="${evolution.evolvesFromName}"></a>
+            <a th:each="target : ${evolution.evolvesTo}" class="evolution-chip"
+               th:href="@{/pokemon/{id}(id=${target.id})}"
+               th:text="${target.nameKo} + (${#strings.isEmpty(target.condition)} ? '' : ' (' + ${target.condition} + ')')"></a>
+        </div>
+    </div>
+
     <!-- ponytail: 막대 폭은 기준치 200(관동 151종 범위에서 충분한 상한) 대비 비율, 200 넘는 값은 100%로 클램프 -->
     <div class="stat-rows">
         <div class="stat-row">

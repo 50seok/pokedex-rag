@@ -199,6 +199,21 @@ h1 {
     font-weight: 600;
 }
 
+.weakness-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.3rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.weakness-label {
+    font-size: 0.8rem;
+    color: #666;
+    margin-right: 0.2rem;
+}
+
 /* 타입별 색상 (커뮤니티 통용 컬러, 특정 저작물 색상 지정이 아닌 일반 관례) */
 .type-normal { background: #F1EFE8; color: #6b6a5f; }
 .type-fire { background: #FDE7DE; color: #9c3b12; }
@@ -357,6 +372,48 @@ h1 {
 
 .flavor-text {
     line-height: 1.6;
+}
+
+.info-list {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.3rem 0.8rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.info-list dt {
+    color: #666;
+}
+
+.info-list dd {
+    margin: 0;
+}
+
+.section-title {
+    font-size: 1rem;
+    margin: 1.2rem 0 0.5rem;
+}
+
+.evolution-chips {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.evolution-chip {
+    display: inline-block;
+    background: var(--accent-tint);
+    color: var(--accent-hover);
+    border-radius: 999px;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.evolution-chip:hover {
+    background: #f6d3d0;
 }
 
 /* 챗 UI */

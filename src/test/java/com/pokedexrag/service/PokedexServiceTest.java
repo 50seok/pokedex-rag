@@ -124,6 +124,30 @@ class PokedexServiceTest {
                         .isEqualTo(HttpStatus.NOT_FOUND));
     }
 
+    @Test
+    void findPokemonDetail_resolvesEvolutionNames() {
+        given(pokemonRepository.findById(1)).willReturn(Optional.of(bulbasaur()));
+        given(pokemonRepository.findById(2)).willReturn(Optional.of(ivysaur()));
+
+        PokedexService.PokemonDetail detail = pokedexService.findPokemonDetail(1);
+
+        assertThat(detail.pokemon().getNameKo()).isEqualTo("이상해씨");
+        assertThat(detail.evolvesFromName()).isNull();
+        assertThat(detail.evolvesTo()).hasSize(1);
+        assertThat(detail.evolvesTo().get(0).nameKo()).isEqualTo("이상해풀");
+        assertThat(detail.evolvesTo().get(0).condition()).isEqualTo("16레벨");
+    }
+
+    @Test
+    void findPokemonDetail_noEvolutionInfo_returnsEmptyEvolvesTo() {
+        given(pokemonRepository.findById(25)).willReturn(Optional.of(pikachu()));
+
+        PokedexService.PokemonDetail detail = pokedexService.findPokemonDetail(25);
+
+        assertThat(detail.evolvesFromName()).isNull();
+        assertThat(detail.evolvesTo()).isEmpty();
+    }
+
     private Pokemon pikachu() {
         return Pokemon.builder()
                 .id(25)
@@ -133,6 +157,32 @@ class PokedexServiceTest {
                 .hp(35).attack(55).defense(40).specialAttack(50).specialDefense(50).speed(90)
                 .spriteUrl("https://example.com/25.png")
                 .flavorTextKo("전기를 저장한다.")
+                .build();
+    }
+
+    private Pokemon bulbasaur() {
+        return Pokemon.builder()
+                .id(1)
+                .nameKo("이상해씨")
+                .genusKo("씨앗포켓몬")
+                .types(List.of("grass", "poison"))
+                .hp(45).attack(49).defense(49).specialAttack(65).specialDefense(65).speed(45)
+                .spriteUrl("https://example.com/1.png")
+                .flavorTextKo("태어났을 때부터 등에 이상한 씨앗이 심어져 있다.")
+                .evolvesTo(List.of("2:16레벨"))
+                .build();
+    }
+
+    private Pokemon ivysaur() {
+        return Pokemon.builder()
+                .id(2)
+                .nameKo("이상해풀")
+                .genusKo("씨앗포켓몬")
+                .types(List.of("grass", "poison"))
+                .hp(60).attack(62).defense(63).specialAttack(80).specialDefense(80).speed(60)
+                .spriteUrl("https://example.com/2.png")
+                .flavorTextKo("씨앗의 냄새를 맡으면 잠이 온다.")
+                .evolvesFromId(1)
                 .build();
     }
 
