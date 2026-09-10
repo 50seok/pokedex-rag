@@ -1,6 +1,6 @@
 # STATUS — 관동 도감 (pokedex-rag)
 
-> 마지막 갱신: 2026-09-10 (타입 색상+스탯바+포인트 컬러 리뉴얼)
+> 마지막 갱신: 2026-09-10 (진화체인+특성+서식지/색상+타입약점 추가)
 
 ## 인프라
 
@@ -17,6 +17,14 @@
 > 브랜치 모델: **M3부터 PR base는 `main`이 아니라 `dev`.** pr-gate가 `dev`로 향하는 PR만 리뷰하기 때문(원래 설계 유지 — main 자동 머지는 M5 배포에 영향을 주므로 제외). `dev`→`main` 승격은 사람이 직접 한다. M2(PR #3)는 이 규칙 적용 전이라 예외적으로 `main`에 바로 머지됨.
 
 ## 마지막 머지 PR
+
+[#32 — feat: 포켓몬 상세에 진화체인·특성·서식지/색상·타입 약점 추가](https://github.com/50seok/pokedex-rag/pull/32) + [#35 — chore: pokemon.json 재수집본 반영](https://github.com/50seok/pokedex-rag/pull/35) (Closes #31, #34) — 2026-09-10
+
+> Flyway V6로 `pokemon`에 `evolves_from_id`/`evolves_to`/`abilities`/`habitat_ko`/`color_ko` 컬럼 추가(전부 nullable). `PokeApiCollector`가 진화체인(분기 포함, 관동 151종 범위로 필터링)·특성·서식지·색상을 PokeAPI에서 수집(슬러그/체인URL 캐싱으로 중복 호출 최소화). `TypeEffectiveness` 정적 유틸로 타입 약점 계산(단순 합집합, 저항/무효 상쇄는 의도적으로 미반영 — 백로그 후보). 상세 페이지에 진화·특성·서식지·색상·약점 표시.
+>
+> **트러블슈팅**: (1) 진화체인 API가 관동 범위 밖 종(이브이의 에스퍼 등, 피츄)까지 포함해서 필터링 추가 (2) Thymeleaf `th:with`+`th:if`를 같은 태그에 쓰면 속성 우선순위상 th:if가 먼저 평가돼 변수가 없는 채로 처리되는 버그(타입 약점이 항상 안 보임) 발견·수정 (3) `data/pokemon.json` 재수집 diff(98KB)가 pr-gate 리뷰 상한(80KB)을 넘겨 review job이 스킵-실패 → 코드(#32)와 데이터(#35)를 분리해서 각각 리뷰 가능하게 함. pr-gate에 diff 크기 상한이 있다는 점, 대용량 데이터 커밋은 코드 변경과 분리해야 한다는 점을 이번에 확인함.
+>
+> code-reviewer 검수(#32): P1 0 · P2 1(이중타입 약점 union의 의도적 단순화, 문서화됨) · P3 1(N+1이지만 151행 규모라 무해) — APPROVE.
 
 [#30 — feat: 타입별 색상 칩 + 스탯 바 + 포인트 컬러 리뉴얼 (B안)](https://github.com/50seok/pokedex-rag/pull/30) (Closes #29) — 2026-09-10
 
@@ -122,5 +130,6 @@
 | Render 무료 512MB RAM | Spring Boot 기동 실패 가능 | `-Xmx320m` 등 JVM 튜닝, 의존성 최소화 |
 | Render 15분 유휴 시 슬립 | 첫 접속 약 1분 대기 | 10분 간격 외부 핑 (월 744h < 750h 한도) |
 | Gemini `embedContent`가 `outputDimensionality` 요청을 무시할 수 있음 | 서버가 768 대신 3072차원 응답 → pgvector insert 실패 | `GeminiEmbeddingService`에서 항상 앞 768개로 클라이언트 잘라내기 적용 완료(해결됨) |
+| pr-gate가 diff 80000자 넘으면 review job을 스킵-실패 처리 | 대용량 데이터 파일이 코드와 같은 PR에 있으면 auto-merge 안 됨 | 코드와 데이터(특히 재수집 JSON 등)를 별도 PR로 분리. 데이터 전용 PR도 상한 넘을 수 있으니, 넘으면 self-review 근거로 수동 머지 (2026-09-10, PR #32/#35에서 확인) |
 | Gemini 무료 티어 입력 데이터 학습 사용 | 없음 (공개 정보만 다룸) | — |
 | ~~Gemini API 키가 속한 프로젝트의 결제(prepay) 크레딧 소진 시 429~~ (해결됨) | ~~임베딩/채팅 호출 전체 실패~~ | trpg-gm과 처음 분리 발급한 키는 같은 GCP 프로젝트("Default Gemini Project") 소속이라 prepay 잔액을 공유해 429 발생 — RPM/TPM/RPD(Tier 1)는 여유 있었으나 프로젝트 단위 prepay 잔액이 0인 게 원인이었음. **별도 GCP 프로젝트를 새로 만들어 그 안에서 키를 재발급**해 완전히 분리, `generateContent`(채팅)·`embedContent`(임베딩) 둘 다 200 응답 확인 — 2026-09-04 |
