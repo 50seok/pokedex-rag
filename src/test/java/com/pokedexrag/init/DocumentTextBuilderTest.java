@@ -7,6 +7,7 @@ import com.pokedexrag.init.DocumentTextBuilder.TownJson;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -21,13 +22,17 @@ class DocumentTextBuilderTest {
                 1, "이상해씨", "씨앗포켓몬", List.of("grass", "poison"),
                 new StatsJson(45, 49, 49, 65, 65, 45),
                 "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-                "태어났을 때부터 등에 이상한 씨앗이 심어져 있으며 몸과 함께 자란다고 한다.");
+                "태어났을 때부터 등에 이상한 씨앗이 심어져 있으며 몸과 함께 자란다고 한다.",
+                null, List.of("2:16레벨"), List.of("심록"), "숲", "초록");
 
         assertThat(DocumentTextBuilder.pokemonTitle(bulbasaur)).isEqualTo("이상해씨 (씨앗포켓몬)");
-        assertThat(DocumentTextBuilder.pokemonContent(bulbasaur)).isEqualTo(
+        assertThat(DocumentTextBuilder.pokemonContent(bulbasaur, Map.of(2, "이상해풀"))).isEqualTo(
                 "이름: 이상해씨\n분류: 씨앗포켓몬\n타입: grass, poison\n"
                         + "종족값: HP 45 공격 49 방어 49 특공 65 특방 65 스피드 45\n"
-                        + "설명: 태어났을 때부터 등에 이상한 씨앗이 심어져 있으며 몸과 함께 자란다고 한다.");
+                        + "설명: 태어났을 때부터 등에 이상한 씨앗이 심어져 있으며 몸과 함께 자란다고 한다.\n"
+                        + "특성: 심록\n"
+                        + "서식지/색상: 숲/초록\n"
+                        + "진화: 이상해풀(16레벨)(으)로 진화");
     }
 
     @Test
