@@ -121,7 +121,7 @@
 - [x] M5 — Neon DB 프로비저닝 + 데이터 이관 (169건) — 2026-09-05
 - [x] M5 — Dockerfile + 로컬 컨테이너 검증 (Neon 연결 포함) — 2026-09-05, PR #18
 - [x] M5 — Render Web Service 배포 — 2026-09-05, https://pokedex-rag-9ri9.onrender.com
-- [ ] M5 — 슬립 방지 핑 구성
+- [보류] M5 — 슬립 방지 핑 구성 — 같은 Render 계정에 무료 서비스가 3개(pokedex-rag·study·trpg-gm)라 750h/월 한도를 공유함. pokedex-rag를 안 재우면 나머지 두 서비스 가용 시간이 6h/월로 줄어들어 보류 결정(2026-09-10)
 
 ## 알려진 이슈
 
