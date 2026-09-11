@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * IP당 분당 {@value #LIMIT_PER_MINUTE}건으로 요청을 제한한다(이슈 #36).
  * 인증 없는 공개 엔드포인트인 /api/chat이 스크립트로 반복 호출되어 Gemini 무료 티어
- * 쿼터가 소진되는 것을 막기 위한 최소 방어선. prod 프로파일에서만 {@link WebConfig}가 등록한다.
+ * 쿼터가 소진되는 것을 막기 위한 최소 방어선. local 프로파일이 아닐 때 {@link WebConfig}가 등록한다.
  *
  * <p>고정 윈도우(fixed window) 카운터 — {@code epoch millis / 60_000}을 윈도우 키로 써서
  * IP별 요청 수를 센다. 슬라이딩 윈도우 대비 윈도우 경계에서 순간적으로 최대 2배까지 허용될 수
@@ -27,10 +27,7 @@ public class RateLimitInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
-        // ponytail: request.getRemoteAddr()만 사용 — Render는 프록시 뒤라 X-Forwarded-For를 안 보면
-        // 실제로는 프록시 IP 하나로 뭉뚱그려질 수 있다. IP별 정밀도보다 "무제한 스크립트 호출 차단"이
-        // 목적인 포트폴리오 규모에서는 허용 가능한 단순화. 필요해지면 X-Forwarded-For 파싱 추가.
-        String ip = request.getRemoteAddr();
+        String ip = resolveClientIp(request);
         long currentWindowStart = System.currentTimeMillis() / 60_000;
 
         Window window = windows.compute(ip, (key, existing) ->
@@ -42,6 +39,17 @@ public class RateLimitInterceptor implements HandlerInterceptor {
             throw new CustomException(ErrorCode.RATE_LIMIT_EXCEEDED);
         }
         return true;
+    }
+
+    // ponytail: Render가 유일한 신뢰 프록시 홉이라고 가정하고 X-Forwarded-For의 첫 값을 그대로 쓴다.
+    // 다단계 프록시 체인이 생기거나 스푸핑 방어(trusted-proxy 화이트리스트, forward-headers-strategy)가
+    // 필요해지면 그때 추가 — 지금 규모에서는 과설계.
+    private String resolveClientIp(HttpServletRequest request) {
+        String forwarded = request.getHeader("X-Forwarded-For");
+        if (forwarded != null && !forwarded.isBlank()) {
+            return forwarded.split(",")[0].trim();
+        }
+        return request.getRemoteAddr();
     }
 
     // ponytail: IP맵을 정리(cleanup)하지 않아 장기 운영 시 서로 다른 IP 수만큼 계속 쌓인다.

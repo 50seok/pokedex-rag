@@ -39,9 +39,28 @@ class RateLimitInterceptorTest {
 
     @Test
     void preHandle_tracksEachIpSeparately() {
-        given(request.getRemoteAddr()).willReturn("1.1.1.1", "2.2.2.2");
+        given(request.getRemoteAddr()).willReturn("1.1.1.1");
+        for (int i = 0; i < 20; i++) {
+            assertThat(interceptor.preHandle(request, response, new Object())).isTrue();
+        }
+        assertThatThrownBy(() -> interceptor.preHandle(request, response, new Object()))
+                .isInstanceOf(CustomException.class);
+
+        given(request.getRemoteAddr()).willReturn("2.2.2.2");
 
         assertThat(interceptor.preHandle(request, response, new Object())).isTrue();
-        assertThat(interceptor.preHandle(request, response, new Object())).isTrue();
+    }
+
+    @Test
+    void preHandle_prefersXForwardedForOverRemoteAddr() {
+        given(request.getHeader("X-Forwarded-For")).willReturn("203.0.113.5, 10.0.0.1");
+        for (int i = 0; i < 20; i++) {
+            assertThat(interceptor.preHandle(request, response, new Object())).isTrue();
+        }
+
+        assertThatThrownBy(() -> interceptor.preHandle(request, response, new Object()))
+                .isInstanceOf(CustomException.class)
+                .satisfies(e -> assertThat(((CustomException) e).getErrorCode())
+                        .isEqualTo(ErrorCode.RATE_LIMIT_EXCEEDED));
     }
 }
