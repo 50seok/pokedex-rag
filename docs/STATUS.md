@@ -1,6 +1,6 @@
 # STATUS — 관동 도감 (pokedex-rag)
 
-> 마지막 갱신: 2026-09-10 (main 배포 승격 + Neon 운영 DB 백필 완료)
+> 마지막 갱신: 2026-09-11 (`/api/chat` rate limiting 추가, dev 머지 — main 승격 대기)
 
 ## 인프라
 
@@ -17,6 +17,14 @@
 > 브랜치 모델: **M3부터 PR base는 `main`이 아니라 `dev`.** pr-gate가 `dev`로 향하는 PR만 리뷰하기 때문(원래 설계 유지 — main 자동 머지는 M5 배포에 영향을 주므로 제외). `dev`→`main` 승격은 사람이 직접 한다. M2(PR #3)는 이 규칙 적용 전이라 예외적으로 `main`에 바로 머지됨.
 
 ## 마지막 머지 PR
+
+[#37 — feat: /api/chat rate limiting (운영 환경 한정, IP당 분당 20건)](https://github.com/50seok/pokedex-rag/pull/37) (Closes #36) — 2026-09-11
+
+> 전체 코드베이스 보안 점검(code-reviewer+security-reviewer)에서 발견된 P1(인증 없는 `/api/chat`에 호출 제한이 없어 Gemini 무료 쿼터 소진 위험) 대응. `RateLimitInterceptor`(IP당 분당 20건 고정 윈도우) + `WebConfig`(`local` 프로파일이 아닐 때만 등록, 로컬은 완전 무제한)로 구현. 초과 시 기존 `ErrorCode`/`GlobalExceptionHandler` 패턴 그대로 재사용해 429 + `{timestamp,code,message}` 응답.
+>
+> **1차 구현 후 리뷰에서 P1 2건 발견, 같은 사이클(cap 1)에서 픽스**: (1) code-reviewer — `WebConfig`가 `matchesProfiles("prod")` 문자열 정확 일치에만 의존하는 fail-open 구조라 프로파일 미설정/오타 시 조용히 무방비 → `!matchesProfiles("local")`로 반전해 fail-closed 전환. (2) security-reviewer — Render가 리버스 프록시 뒤에 있어 `getRemoteAddr()`가 전체 방문자를 프록시 IP 하나로 뭉개 "IP별 제한"이 "전체 공유 버킷"이 되는 문제(방문자 1명이 한도 채우면 그 1분간 전원 429 — 원래 막으려던 것보다 나쁜 결과) → `X-Forwarded-For` 첫 값을 실제 클라이언트 IP로 우선 사용, 헤더 없으면 `getRemoteAddr()` 폴백.
+>
+> **main 미승격**: 아직 `dev`에만 반영, main 배포(Render 운영)에는 승격 전. 아직은 로컬 `local` 프로파일에서만 실사용 가능하고, 운영 rate limit 자체는 다음 main 승격 때부터 실제로 걸림.
 
 **2026-09-10 — dev→main 승격 + Neon 운영 DB 백필**: PR #21~#35 전체(챗 Enter/이미지·관동지도·울음소리·도감번호·UI톤 리뉴얼·진화체인/특성/서식지/색상/타입약점)를 `main`에 fast-forward 승격 → Render 자동 배포 완료. Neon MCP(user scope, OAuth) 신규 연결해서 접속정보 확보 → 로컬에서 `.env`를 잠깐 Neon 값으로 바꿔 `--app.ingest.enabled=true` 재실행으로 운영 DB 151종 백필 + 169건 재임베딩 완료, 작업 후 로컬 값으로 원복. 실제 서비스(https://pokedex-rag-9ri9.onrender.com)에서 이상해씨(#1) 전체 기능(진화·특성·서식지·색상·약점·스탯바·움짤·울음소리) 확인 완료.
 
