@@ -1,6 +1,6 @@
 # STATUS — 관동 도감 (pokedex-rag)
 
-> 마지막 갱신: 2026-09-11 (`/api/chat` rate limiting 추가, dev 머지 — main 승격 대기)
+> 마지막 갱신: 2026-09-11 (`/api/chat` rate limiting main 배포 승격 완료)
 
 ## 인프라
 
@@ -24,7 +24,9 @@
 >
 > **1차 구현 후 리뷰에서 P1 2건 발견, 같은 사이클(cap 1)에서 픽스**: (1) code-reviewer — `WebConfig`가 `matchesProfiles("prod")` 문자열 정확 일치에만 의존하는 fail-open 구조라 프로파일 미설정/오타 시 조용히 무방비 → `!matchesProfiles("local")`로 반전해 fail-closed 전환. (2) security-reviewer — Render가 리버스 프록시 뒤에 있어 `getRemoteAddr()`가 전체 방문자를 프록시 IP 하나로 뭉개 "IP별 제한"이 "전체 공유 버킷"이 되는 문제(방문자 1명이 한도 채우면 그 1분간 전원 429 — 원래 막으려던 것보다 나쁜 결과) → `X-Forwarded-For` 첫 값을 실제 클라이언트 IP로 우선 사용, 헤더 없으면 `getRemoteAddr()` 폴백.
 >
-> **main 미승격**: 아직 `dev`에만 반영, main 배포(Render 운영)에는 승격 전. 아직은 로컬 `local` 프로파일에서만 실사용 가능하고, 운영 rate limit 자체는 다음 main 승격 때부터 실제로 걸림.
+> **2026-09-11 — main 승격 완료**: `dev`를 `main`에 머지(비-ff, `git merge`) → Render 자동 배포, `status: live` 확인(https://pokedex-rag-9ri9.onrender.com). 운영 로그에서 `SPRING_PROFILES_ACTIVE=prod`가 실제로 적용되어 있음을 확인(`The following 1 profile is active: "prod"`) — code-reviewer가 우려했던 "prod 값 미설정" 시나리오는 실제로는 발생하지 않았음. 운영에서 `/api/chat`을 21회 연속 호출해 직접 검증하던 중, 15번째 호출 근방부터 6건 연속 500(`CHAT_GENERATION_FAILED`로 추정)이 나왔다가 곧 회복됨 — Render 요청/에러 로그에 해당 구간 기록이 없어 확정할 순 없지만, 우리 앱의 분당 20건 한도보다 **Gemini 무료 티어 자체의 실제 RPM 한도가 더 낮아 먼저 걸린 것**으로 추정(패턴상 일치). 즉 이 rate limiter는 Gemini 자체 한도보다 낮은 트리거로는 거의 작동할 일이 없고, 더 오래 지속되는 남용(분산 다중 IP·장시간 스크립트)에 대한 백스톱 역할.
+>
+> 부수적으로 발견한 별도 버그: `.env`의 `SPRING_PROFILES_ACTIVE`가 `application.properties`에 참조 줄이 없어 지금까지 로컬에서 전혀 적용되지 않고 있었음(`spring.profiles.active=${SPRING_PROFILES_ACTIVE:local}` 추가로 해결) — 자세한 내용은 "알려진 이슈" 표 참고.
 
 **2026-09-10 — dev→main 승격 + Neon 운영 DB 백필**: PR #21~#35 전체(챗 Enter/이미지·관동지도·울음소리·도감번호·UI톤 리뉴얼·진화체인/특성/서식지/색상/타입약점)를 `main`에 fast-forward 승격 → Render 자동 배포 완료. Neon MCP(user scope, OAuth) 신규 연결해서 접속정보 확보 → 로컬에서 `.env`를 잠깐 Neon 값으로 바꿔 `--app.ingest.enabled=true` 재실행으로 운영 DB 151종 백필 + 169건 재임베딩 완료, 작업 후 로컬 값으로 원복. 실제 서비스(https://pokedex-rag-9ri9.onrender.com)에서 이상해씨(#1) 전체 기능(진화·특성·서식지·색상·약점·스탯바·움짤·울음소리) 확인 완료.
 
