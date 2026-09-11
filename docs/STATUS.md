@@ -137,6 +137,7 @@
 
 | 이슈 | 영향 | 대응 |
 |---|---|---|
+| ~~`SPRING_PROFILES_ACTIVE`(.env)가 실제 활성 프로파일로 연결 안 됨~~ (해결됨) | ~~`application.properties`에 참조 줄이 없어 항상 "default" 프로파일로 부팅 — PR #37의 WebConfig(로컬 무제한 rate limit)가 프로파일에 의존하는 첫 로직이라 지금까지 드러나지 않다가, 로컬에서도 rate limit이 걸리는 형태로 발현~~ | `application.properties`에 `spring.profiles.active=${SPRING_PROFILES_ACTIVE:local}` 추가 — 2026-09-11 |
 | Render 무료 512MB RAM | Spring Boot 기동 실패 가능 | `-Xmx320m` 등 JVM 튜닝, 의존성 최소화 |
 | Render 15분 유휴 시 슬립 | 첫 접속 약 1분 대기 | 10분 간격 외부 핑 (월 744h < 750h 한도) |
 | Gemini `embedContent`가 `outputDimensionality` 요청을 무시할 수 있음 | 서버가 768 대신 3072차원 응답 → pgvector insert 실패 | `GeminiEmbeddingService`에서 항상 앞 768개로 클라이언트 잘라내기 적용 완료(해결됨) |
